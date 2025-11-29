@@ -1,0 +1,14 @@
+{
+  "name": "lumina-3d-block-explorer",
+  "version": "1.0.0",
+  "description": "Lumina 3D Modern Stellar Explorer",
+  "scripts": {
+    "start": "./start.sh",
+    "stop": "./stop.sh",
+    "dev": "concurrently \"docker-compose up mongodb mongodb-archive elasticsearch redis\" \"cd api && npm start\" \"cd ui && pnpm dev-server\"",
+    "install:all": "cd api && npm install && cd ../ui && pnpm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

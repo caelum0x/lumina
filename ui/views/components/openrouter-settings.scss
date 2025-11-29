@@ -1,0 +1,179 @@
+.openrouter-settings {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    max-width: 600px;
+    margin: 20px auto;
+
+    h3 {
+        color: #00f0ff;
+        margin-bottom: 10px;
+        font-family: 'Orbitron', monospace;
+    }
+
+    .description {
+        color: #aaa;
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+        line-height: 1.6;
+
+        a {
+            color: #00f0ff;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .status-message {
+        padding: 10px 15px;
+        border-radius: 6px;
+        margin-bottom: 15px;
+        font-size: 0.9rem;
+
+        &.success {
+            background: rgba(0, 255, 0, 0.2);
+            border: 1px solid rgba(0, 255, 0, 0.5);
+            color: #00ff00;
+        }
+
+        &.error {
+            background: rgba(255, 0, 0, 0.2);
+            border: 1px solid rgba(255, 0, 0, 0.5);
+            color: #ff0000;
+        }
+    }
+
+    .settings-form {
+        .form-group {
+            margin-bottom: 20px;
+
+            label {
+                display: block;
+                color: #fff;
+                margin-bottom: 8px;
+                font-size: 0.9rem;
+                font-weight: 600;
+
+                .configured-badge {
+                    margin-left: 10px;
+                    padding: 2px 8px;
+                    background: rgba(0, 255, 0, 0.2);
+                    border: 1px solid rgba(0, 255, 0, 0.5);
+                    border-radius: 4px;
+                    color: #00ff00;
+                    font-size: 0.75rem;
+                }
+            }
+
+            input[type="password"],
+            select {
+                width: 100%;
+                padding: 10px 12px;
+                background: rgba(0, 0, 0, 0.7);
+                border: 1px solid rgba(0, 240, 255, 0.3);
+                border-radius: 6px;
+                color: #fff;
+                font-family: monospace;
+                font-size: 0.9rem;
+                transition: all 0.3s ease;
+
+                &:focus {
+                    outline: none;
+                    border-color: #00f0ff;
+                    box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+                }
+
+                &:disabled {
+                    opacity: 0.6;
+                    cursor: not-allowed;
+                }
+            }
+
+            small {
+                display: block;
+                margin-top: 5px;
+                color: #aaa;
+                font-size: 0.8rem;
+
+                a {
+                    color: #00f0ff;
+                    text-decoration: none;
+                    margin-left: 5px;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            .btn-remove {
+                margin-top: 10px;
+                padding: 8px 16px;
+                background: rgba(255, 0, 0, 0.2);
+                border: 1px solid rgba(255, 0, 0, 0.5);
+                border-radius: 6px;
+                color: #ff0000;
+                cursor: pointer;
+                font-size: 0.85rem;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    background: rgba(255, 0, 0, 0.3);
+                    transform: translateY(-2px);
+                }
+            }
+        }
+
+        .btn-save {
+            width: 100%;
+            padding: 12px 24px;
+            background: rgba(0, 240, 255, 0.2);
+            border: 1px solid #00f0ff;
+            border-radius: 6px;
+            color: #00f0ff;
+            font-family: 'Orbitron', monospace;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background: rgba(0, 240, 255, 0.3);
+                transform: translateY(-2px);
+                box-shadow: 0 5px 20px rgba(0, 240, 255, 0.3);
+            }
+        }
+    }
+
+    .info-box {
+        margin-top: 30px;
+        padding: 15px;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 6px;
+        border: 1px solid rgba(0, 240, 255, 0.2);
+
+        h4 {
+            color: #00f0ff;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 20px;
+            color: #aaa;
+            font-size: 0.85rem;
+            line-height: 1.8;
+
+            li {
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
+

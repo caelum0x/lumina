@@ -1,0 +1,51 @@
+.asset-verification-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin: 5px 0;
+
+    &.verified {
+        background: rgba(0, 255, 0, 0.1);
+        border: 1px solid rgba(0, 255, 0, 0.3);
+        color: #00ff00;
+    }
+
+    &.unverified {
+        background: rgba(255, 200, 0, 0.1);
+        border: 1px solid rgba(255, 200, 0, 0.3);
+        color: #ffc800;
+    }
+}
+
+.badge-icon {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.badge-text {
+    flex: 1;
+}
+
+.badge-domain {
+    font-size: 0.75rem;
+    opacity: 0.8;
+    font-weight: 400;
+}
+
+// Dark theme
+[data-theme="dark"] .asset-verification-badge.verified,
+.dark .asset-verification-badge.verified {
+    background: rgba(0, 255, 0, 0.15);
+    border-color: rgba(0, 255, 0, 0.4);
+}
+
+[data-theme="dark"] .asset-verification-badge.unverified,
+.dark .asset-verification-badge.unverified {
+    background: rgba(255, 200, 0, 0.15);
+    border-color: rgba(255, 200, 0, 0.4);
+}
+

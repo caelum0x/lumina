@@ -1,0 +1,80 @@
+{
+  "dashboard": {
+    "title": "Lumina Explorer - Overview",
+    "tags": ["lumina", "stellar", "explorer"],
+    "timezone": "browser",
+    "schemaVersion": 16,
+    "version": 1,
+    "refresh": "10s",
+    "panels": [
+      {
+        "id": 1,
+        "title": "Network TPS",
+        "type": "graph",
+        "gridPos": {"h": 8, "w": 12, "x": 0, "y": 0},
+        "targets": [
+          {
+            "expr": "lumina_network_tps",
+            "refId": "A"
+          }
+        ],
+        "yaxes": [
+          {"format": "short", "label": "TPS"},
+          {"format": "short"}
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Top Whale Balances",
+        "type": "graph",
+        "gridPos": {"h": 8, "w": 12, "x": 12, "y": 0},
+        "targets": [
+          {
+            "expr": "lumina_account_balance_xlm",
+            "refId": "A",
+            "legendFormat": "{{account}}"
+          }
+        ],
+        "yaxes": [
+          {"format": "short", "label": "XLM"},
+          {"format": "short"}
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Asset Prices (USD)",
+        "type": "graph",
+        "gridPos": {"h": 8, "w": 12, "x": 0, "y": 8},
+        "targets": [
+          {
+            "expr": "lumina_asset_price_usd",
+            "refId": "A",
+            "legendFormat": "{{asset}}"
+          }
+        ],
+        "yaxes": [
+          {"format": "currencyUSD", "label": "Price"},
+          {"format": "short"}
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Liquidity Pool TVL",
+        "type": "graph",
+        "gridPos": {"h": 8, "w": 12, "x": 12, "y": 8},
+        "targets": [
+          {
+            "expr": "lumina_pool_tvl_xlm",
+            "refId": "A",
+            "legendFormat": "{{assets}}"
+          }
+        ],
+        "yaxes": [
+          {"format": "short", "label": "XLM"},
+          {"format": "short"}
+        ]
+      }
+    ]
+  }
+}
+

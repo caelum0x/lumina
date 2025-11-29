@@ -1,0 +1,87 @@
+{
+  "name": "lumina-ui",
+  "private": true,
+  "version": "0.28.16",
+  "description": "Block explorer with analytics platform for Stellar Network that features granular historical statistics, detailed assets dashboard, and advanced payment locator.",
+  "main": "app.js",
+  "scripts": {
+    "build": "webpack --mode=production --config ./webpack-config.js",
+    "dev-server": "webpack serve --mode development --config ./webpack-config.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "build-api-docs": "pnpm --package=@redocly/cli dlx openapi build-docs open-api/openapi.yml -t open-api/openapi-template.hbs -o public/openapi.html"
+  },
+  "browserslist": [
+    "> 1%",
+    "not ie 11",
+    "not op_mini all"
+  ],
+  "dependencies": {
+    "@albedo-link/intent": "^0.12.0",
+    "@react-three/drei": "^8.20.2",
+    "@react-three/fiber": "^7.0.29",
+    "@sentry/react": "^7.99.0",
+    "@stellar-asset-lists/sdk": "^1.0.0",
+    "@stellar-expert/asset-descriptor": "^1.4.0",
+    "@stellar-expert/claimable-balance-utils": "^1.4.1",
+    "@stellar-expert/client-cache": "^1.0.0",
+    "@stellar-expert/contract-wasm-interface-parser": "^3.2.0",
+    "@stellar-expert/formatter": "^2.5.0",
+    "@stellar-expert/navigation": "^1.0.2",
+    "@stellar-expert/tx-meta-effects-parser": "7.0.0-rc.17",
+    "@stellar-expert/tx-signers-inspector": "^1.8.2",
+    "@stellar-expert/ui-framework": "1.15.4",
+    "@stellar/stellar-base": "14.0.0",
+    "@stellar/stellar-sdk": "14.1.1",
+    "classnames": "^2.3.2",
+    "deepmerge": "^4.2.2",
+    "highcharts": "8.1.0",
+    "history": "^4.10.1",
+    "markdown-to-jsx": "^7.1.7",
+    "prop-types": "^15.8.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-fast-compare": "^3.2.1",
+    "react-force-graph-2d": "^1.25.1",
+    "react-router": "^5.3.3",
+    "sha.js": "^2.4.11",
+    "three": "0.141.0",
+    "throttle-debounce": "^5.0.0",
+    "zustand": "^4.4.7"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.41.0",
+    "@redocly/cli": "^1.25.11",
+    "@stellar-expert/eslint-config-js": "^1.1.0",
+    "@stellar-expert/eslint-config-react": "^1.1.0",
+    "@stellar-expert/webpack-template": "1.5.1",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^12.1.5",
+    "@testing-library/user-event": "^13.5.0",
+    "babel-jest": "^27.5.1",
+    "buffer": "^6.0.3",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.5.1",
+    "jest-environment-jsdom": "^27.5.1",
+    "jest-transform-stub": "^2.0.0",
+    "process": "^0.11.10"
+  },
+  "overrides": {
+    "@stellar/stellar-sdk": "14.0.0",
+    "@stellar/stellar-base": "14.1.1"
+  },
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "protobufjs"
+    ],
+    "onlyBuiltDependencies": [
+      "core-js",
+      "node-sass"
+    ]
+  }
+}

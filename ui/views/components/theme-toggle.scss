@@ -1,0 +1,42 @@
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(0, 240, 255, 0.1);
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    border-radius: 6px;
+    color: #00f0ff;
+    cursor: pointer;
+    font-family: 'Orbitron', monospace;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: rgba(0, 240, 255, 0.2);
+        border-color: #00f0ff;
+        transform: translateY(-2px);
+    }
+}
+
+.theme-label {
+    font-weight: 600;
+}
+
+// Dark theme styles
+[data-theme="dark"] {
+    --color-bg: #0a0a0a;
+    --color-alt-bg: #1a1a1a;
+    --color-text: #ffffff;
+    --color-text-dimmed: rgba(255, 255, 255, 0.7);
+    --color-border: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="light"] {
+    --color-bg: #ffffff;
+    --color-alt-bg: #f5f5f5;
+    --color-text: #000000;
+    --color-text-dimmed: #666666;
+    --color-border: #e0e0e0;
+}
+

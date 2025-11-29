@@ -1,0 +1,74 @@
+.account-value-estimator {
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.1) 0%, rgba(255, 0, 128, 0.1) 100%);
+    border-radius: 8px;
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    margin: 20px 0;
+}
+
+.value-display {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.value-label {
+    font-size: 0.9rem;
+    color: var(--color-text-dimmed, #666);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.value-amount {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #00f0ff;
+    font-family: 'Orbitron', monospace;
+    margin-bottom: 5px;
+}
+
+.value-usd {
+    font-size: 1rem;
+    color: var(--color-text-dimmed, #666);
+}
+
+.value-breakdown {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 15px;
+    border-top: 1px solid rgba(0, 240, 255, 0.2);
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.breakdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.breakdown-label {
+    font-size: 0.85rem;
+    color: var(--color-text-dimmed, #666);
+}
+
+.breakdown-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text, #000);
+    font-family: monospace;
+}
+
+// Dark theme
+[data-theme="dark"] .account-value-estimator,
+.dark .account-value-estimator {
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.15) 0%, rgba(255, 0, 128, 0.15) 100%);
+    border-color: rgba(0, 240, 255, 0.4);
+}
+
+[data-theme="dark"] .breakdown-value,
+.dark .breakdown-value {
+    color: #fff;
+}
+

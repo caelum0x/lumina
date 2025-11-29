@@ -1,0 +1,146 @@
+.contract-deployment-info {
+    padding: 20px;
+    background: var(--color-alt-bg, #f5f5f5);
+    border-radius: 8px;
+    border: 1px solid var(--color-border, #e0e0e0);
+    margin: 20px 0;
+}
+
+.deployment-details {
+    margin-top: 15px;
+}
+
+.detail-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.detail-item {
+    display: flex;
+    gap: 15px;
+    padding: 10px;
+    background: var(--color-bg, #fff);
+    border-radius: 6px;
+    border: 1px solid var(--color-border, #e0e0e0);
+}
+
+.detail-label {
+    font-weight: 600;
+    color: var(--color-text-dimmed, #666);
+    min-width: 180px;
+}
+
+.detail-value {
+    flex: 1;
+    color: var(--color-text, #000);
+    word-break: break-word;
+
+    code {
+        font-family: monospace;
+        font-size: 0.9rem;
+        padding: 4px 8px;
+        background: var(--color-alt-bg, #f5f5f5);
+        border-radius: 4px;
+    }
+
+    a {
+        color: #00f0ff;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.validation-section {
+    padding: 15px;
+    background: var(--color-bg, #fff);
+    border-radius: 6px;
+    border: 1px solid var(--color-border, #e0e0e0);
+
+    h4 {
+        margin-top: 0;
+        margin-bottom: 15px;
+        color: #00f0ff;
+    }
+}
+
+.validation-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.validation-item {
+    display: flex;
+    gap: 15px;
+}
+
+.validation-label {
+    font-weight: 600;
+    color: var(--color-text-dimmed, #666);
+    min-width: 120px;
+}
+
+.validation-value {
+    flex: 1;
+    color: var(--color-text, #000);
+    word-break: break-word;
+
+    code {
+        font-family: monospace;
+        font-size: 0.85rem;
+        padding: 4px 8px;
+        background: var(--color-alt-bg, #f5f5f5);
+        border-radius: 4px;
+    }
+
+    a {
+        color: #00f0ff;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.validation-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+
+    &.verified {
+        background: rgba(0, 255, 0, 0.1);
+        border: 1px solid rgba(0, 255, 0, 0.3);
+        color: #00ff00;
+    }
+}
+
+// Dark theme
+[data-theme="dark"] .contract-deployment-info,
+.dark .contract-deployment-info {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .detail-item,
+[data-theme="dark"] .validation-section,
+.dark .detail-item,
+.dark .validation-section {
+    background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .detail-value code,
+[data-theme="dark"] .validation-value code,
+.dark .detail-value code,
+.dark .validation-value code {
+    background: rgba(255, 255, 255, 0.05);
+}
+

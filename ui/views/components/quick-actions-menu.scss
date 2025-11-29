@@ -1,0 +1,120 @@
+.quick-actions-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.quick-actions-trigger {
+    background: rgba(0, 240, 255, 0.1);
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    border-radius: 6px;
+    padding: 6px 12px;
+    color: #00f0ff;
+    cursor: pointer;
+    font-size: 1.2rem;
+    line-height: 1;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: rgba(0, 240, 255, 0.2);
+        border-color: #00f0ff;
+        transform: translateY(-2px);
+    }
+}
+
+.quick-actions-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 8px;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    border-radius: 8px;
+    padding: 8px;
+    min-width: 200px;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    animation: slideDown 0.2s ease;
+}
+
+.quick-action-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 12px;
+    background: transparent;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+
+    &:hover {
+        background: rgba(0, 240, 255, 0.1);
+    }
+}
+
+.action-icon {
+    font-size: 1.1rem;
+}
+
+.action-label {
+    flex: 1;
+}
+
+.quick-actions-toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    color: #00f0ff;
+    padding: 12px 20px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    z-index: 10000;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+
+    &.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Position variants
+.quick-actions-menu.position-bottom-left .quick-actions-dropdown {
+    right: auto;
+    left: 0;
+}
+
+.quick-actions-menu.position-top-right .quick-actions-dropdown {
+    bottom: 100%;
+    top: auto;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.quick-actions-menu.position-top-left .quick-actions-dropdown {
+    bottom: 100%;
+    top: auto;
+    right: auto;
+    left: 0;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+

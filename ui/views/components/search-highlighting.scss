@@ -1,0 +1,14 @@
+.search-highlight {
+    background: rgba(255, 255, 0, 0.3);
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+// Dark theme
+[data-theme="dark"] .search-highlight,
+.dark .search-highlight {
+    background: rgba(255, 255, 0, 0.4);
+    color: #000;
+}
+

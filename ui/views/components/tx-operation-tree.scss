@@ -1,0 +1,122 @@
+.tx-operation-tree {
+    padding: 20px;
+    background: var(--color-alt-bg, #f5f5f5);
+    border-radius: 8px;
+    border: 1px solid var(--color-border, #e0e0e0);
+    margin: 20px 0;
+}
+
+.operations-list {
+    margin-top: 15px;
+}
+
+.operation-item {
+    margin-bottom: 10px;
+    border: 1px solid var(--color-border, #e0e0e0);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.operation-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    background: var(--color-bg, #fff);
+    cursor: pointer;
+    transition: background 0.2s ease;
+
+    &:hover {
+        background: var(--color-alt-bg, #f5f5f5);
+    }
+}
+
+.operation-number {
+    font-weight: 600;
+    color: var(--color-text-dimmed, #666);
+    min-width: 30px;
+}
+
+.operation-type {
+    flex: 1;
+    font-weight: 600;
+    color: var(--color-text, #000);
+    text-transform: capitalize;
+}
+
+.operation-toggle {
+    color: var(--color-text-dimmed, #999);
+    font-size: 0.8rem;
+}
+
+.operation-details {
+    padding: 15px;
+    background: var(--color-bg, #fff);
+    border-top: 1px solid var(--color-border, #e0e0e0);
+}
+
+.detail-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--color-border, #e0e0e0);
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+.detail-label {
+    font-weight: 600;
+    color: var(--color-text-dimmed, #666);
+    min-width: 120px;
+}
+
+.detail-value {
+    flex: 1;
+    color: var(--color-text, #000);
+    word-break: break-word;
+    font-family: monospace;
+    font-size: 0.9rem;
+}
+
+.no-operations {
+    padding: 20px;
+    text-align: center;
+    color: var(--color-text-dimmed, #666);
+    font-style: italic;
+}
+
+// Dark theme
+[data-theme="dark"] .tx-operation-tree,
+.dark .tx-operation-tree {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .operation-item,
+.dark .operation-item {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .operation-header,
+.dark .operation-header {
+    background: rgba(255, 255, 255, 0.02);
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.05);
+    }
+}
+
+[data-theme="dark"] .operation-details,
+.dark .operation-details {
+    background: rgba(255, 255, 255, 0.02);
+    border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .detail-row,
+.dark .detail-row {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+

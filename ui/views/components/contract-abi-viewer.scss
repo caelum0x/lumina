@@ -1,0 +1,132 @@
+.contract-abi-viewer {
+    padding: 20px;
+    background: var(--color-alt-bg, #f5f5f5);
+    border-radius: 8px;
+    border: 1px solid var(--color-border, #e0e0e0);
+    margin: 20px 0;
+}
+
+.viewer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    h3 {
+        margin: 0;
+    }
+}
+
+.view-mode-toggle {
+    display: flex;
+    gap: 5px;
+}
+
+.view-mode-toggle button {
+    padding: 6px 12px;
+    background: transparent;
+    border: 1px solid var(--color-border, #e0e0e0);
+    border-radius: 4px;
+    color: var(--color-text, #000);
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: var(--color-bg, #fff);
+    }
+
+    &.active {
+        background: rgba(0, 240, 255, 0.2);
+        border-color: #00f0ff;
+        color: #00f0ff;
+        font-weight: 600;
+    }
+}
+
+.abi-content {
+    margin-bottom: 20px;
+}
+
+.formatted-interface,
+.raw-interface,
+.json-interface {
+    padding: 15px;
+    background: var(--color-bg, #fff);
+    border-radius: 6px;
+    border: 1px solid var(--color-border, #e0e0e0);
+    max-height: 600px;
+    overflow: auto;
+}
+
+.raw-interface pre {
+    margin: 0;
+    font-family: monospace;
+    font-size: 0.9rem;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.no-abi {
+    padding: 40px;
+    text-align: center;
+    color: var(--color-text-dimmed, #666);
+    font-style: italic;
+}
+
+.abi-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.copy-button {
+    padding: 8px 16px;
+    background: rgba(0, 240, 255, 0.1);
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    border-radius: 4px;
+    color: #00f0ff;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: rgba(0, 240, 255, 0.2);
+        border-color: #00f0ff;
+    }
+}
+
+// Dark theme
+[data-theme="dark"] .contract-abi-viewer,
+.dark .contract-abi-viewer {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .view-mode-toggle button,
+.dark .view-mode-toggle button {
+    border-color: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.9);
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    &.active {
+        background: rgba(0, 240, 255, 0.2);
+        border-color: #00f0ff;
+        color: #00f0ff;
+    }
+}
+
+[data-theme="dark"] .formatted-interface,
+[data-theme="dark"] .raw-interface,
+[data-theme="dark"] .json-interface,
+.dark .formatted-interface,
+.dark .raw-interface,
+.dark .json-interface {
+    background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+

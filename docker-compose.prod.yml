@@ -1,0 +1,179 @@
+version: '3.9'
+
+services:
+  api:
+    image: node:20-alpine
+    container_name: lumina-api
+    working_dir: /app
+    volumes:
+      - ./api:/app
+    ports:
+      - "3000:3000"
+    command: sh -c "npm install --production && node api.js"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - MONGODB_URI=mongodb://mongodb:27017/se_pub802
+      - MONGODB_ARCHIVE_URI=mongodb://mongodb-archive:27017/se_archive
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+      - HORIZON_URL_PUBLIC=https://horizon.stellar.org
+      - HORIZON_URL_TESTNET=https://horizon-testnet.stellar.org
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - mongodb
+      - mongodb-archive
+      - elasticsearch
+      - redis
+    networks:
+      - lumina-network
+
+  web:
+    image: nginx:alpine
+    container_name: lumina-web
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./ui/public:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+    restart: unless-stopped
+    depends_on:
+      - api
+    networks:
+      - lumina-network
+
+  certbot:
+    image: certbot/certbot:latest
+    volumes:
+      - ./ssl:/etc/letsencrypt
+      - ./ui/public:/var/www/html
+    networks:
+      - lumina-network
+    # Command will be overridden in deploy.sh
+    command: echo "Run deploy.sh to get certificates"
+
+  mongodb:
+    image: mongo:7.0
+    container_name: lumina-mongodb
+    environment:
+      MONGO_INITDB_DATABASE: se_pub802
+    volumes:
+      - mongodb_data:/data/db
+      - ./docker/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    networks:
+      - lumina-network
+    restart: unless-stopped
+
+  mongodb-archive:
+    image: mongo:7.0
+    container_name: lumina-mongodb-archive
+    environment:
+      MONGO_INITDB_DATABASE: se_archive
+    volumes:
+      - mongodb_archive_data:/data/db
+    networks:
+      - lumina-network
+    restart: unless-stopped
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.11.0
+    container_name: lumina-elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    volumes:
+      - elasticsearch_data:/usr/share/elasticsearch/data
+    networks:
+      - lumina-network
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: lumina-redis
+    volumes:
+      - redis_data:/data
+    networks:
+      - lumina-network
+    command: redis-server --appendonly yes
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: lumina-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+    restart: unless-stopped
+    networks:
+      - lumina-network
+
+  grafana:
+    image: grafana/grafana:10.4.1
+    container_name: lumina-grafana
+    ports:
+      - "3001:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin123
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana-dashboards:/etc/grafana/provisioning/dashboards
+      - ./monitoring/grafana-datasources:/etc/grafana/provisioning/datasources
+    restart: unless-stopped
+    depends_on:
+      - prometheus
+    networks:
+      - lumina-network
+
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: lumina-node-exporter
+    ports:
+      - "9100:9100"
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.sysfs=/host/sys'
+      - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
+    restart: unless-stopped
+    networks:
+      - lumina-network
+
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:latest
+    container_name: lumina-cadvisor
+    ports:
+      - "8080:8080"
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+      - /dev/disk/:/dev/disk:ro
+    privileged: true
+    restart: unless-stopped
+    networks:
+      - lumina-network
+
+volumes:
+  mongodb_data:
+  mongodb_archive_data:
+  elasticsearch_data:
+  redis_data:
+  prometheus_data:
+  grafana_data:
+
+networks:
+  lumina-network:
+    driver: bridge

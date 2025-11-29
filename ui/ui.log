@@ -1,0 +1,24 @@
+
+> ui.stellar.expert@0.28.16 dev-server /Users/arhansubasi/lumina/lumina/ui
+> webpack serve --mode development --config ./webpack-config.js
+
+Building webpack project /Users/arhansubasi/lumina/lumina/ui
+mode=development
+/Users/arhansubasi/lumina/lumina/ui/node_modules/.pnpm/webpack-dev-server@5.2.2_webpack-cli@6.0.1_webpack@5.103.0/node_modules/webpack-dev-server/lib/Server.js:2638
+        throw error;
+        ^
+
+Error: listen EADDRINUSE: address already in use 0.0.0.0:9001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at node:net:2206:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 9001
+}
+
+Node.js v24.10.0
+ ELIFECYCLE  Command failed with exit code 1.

@@ -1,0 +1,51 @@
+.print-content {
+    // Print-specific styles
+}
+
+.print-title {
+    page-break-after: avoid;
+    margin-bottom: 1em;
+}
+
+.print-button {
+    padding: 8px 16px;
+    background: rgba(0, 240, 255, 0.1);
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    border-radius: 6px;
+    color: #00f0ff;
+    cursor: pointer;
+    font-family: 'Orbitron', monospace;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: rgba(0, 240, 255, 0.2);
+        border-color: #00f0ff;
+        transform: translateY(-2px);
+    }
+}
+
+@media print {
+    .print-content {
+        color: #000;
+        background: #fff;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+
+    // Hide navigation and non-essential elements
+    .top-block,
+    .footer,
+    .overlay,
+    button:not(.print-button) {
+        display: none !important;
+    }
+}
+

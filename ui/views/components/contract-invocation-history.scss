@@ -1,0 +1,153 @@
+.contract-invocation-history {
+    padding: 20px;
+    background: var(--color-alt-bg, #f5f5f5);
+    border-radius: 8px;
+    border: 1px solid var(--color-border, #e0e0e0);
+    margin: 20px 0;
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    h3 {
+        margin: 0;
+    }
+}
+
+.history-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.filter-select {
+    padding: 8px 12px;
+    border: 1px solid var(--color-border, #e0e0e0);
+    border-radius: 4px;
+    background: var(--color-bg, #fff);
+    color: var(--color-text, #000);
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.invocation-item {
+    padding: 15px;
+    background: var(--color-bg, #fff);
+    border-radius: 6px;
+    border: 1px solid var(--color-border, #e0e0e0);
+    margin-bottom: 15px;
+}
+
+.invocation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.invocation-function {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.function-name {
+    font-weight: 600;
+    color: #00f0ff;
+    font-family: monospace;
+    font-size: 1rem;
+}
+
+.invocation-status {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    &.success {
+        background: rgba(0, 255, 0, 0.1);
+        color: #00ff00;
+    }
+
+    &.failed {
+        background: rgba(255, 0, 0, 0.1);
+        color: #ff0000;
+    }
+}
+
+.invocation-timestamp {
+    font-size: 0.85rem;
+    color: var(--color-text-dimmed, #666);
+}
+
+.invocation-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.detail-row {
+    display: flex;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--color-border, #e0e0e0);
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+.detail-label {
+    font-weight: 600;
+    color: var(--color-text-dimmed, #666);
+    min-width: 120px;
+}
+
+.detail-value {
+    flex: 1;
+    color: var(--color-text, #000);
+    word-break: break-word;
+
+    pre {
+        margin: 0;
+        padding: 8px;
+        background: var(--color-alt-bg, #f5f5f5);
+        border-radius: 4px;
+        font-size: 0.85rem;
+        overflow-x: auto;
+    }
+}
+
+// Dark theme
+[data-theme="dark"] .contract-invocation-history,
+.dark .contract-invocation-history {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .invocation-item,
+.dark .invocation-item {
+    background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .filter-select,
+.dark .filter-select {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+[data-theme="dark"] .detail-value pre,
+.dark .detail-value pre {
+    background: rgba(255, 255, 255, 0.05);
+}
+

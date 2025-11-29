@@ -1,0 +1,18 @@
+.smart-search {
+  position: relative !important;
+  z-index: 10000 !important;
+  pointer-events: auto !important;
+  
+  input {
+    position: relative !important;
+    z-index: 10001 !important;
+    pointer-events: auto !important;
+    cursor: text !important;
+  }
+  
+  .suggestions-dropdown {
+    position: absolute !important;
+    z-index: 10002 !important;
+    pointer-events: auto !important;
+  }
+}

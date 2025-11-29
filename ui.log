@@ -1,0 +1,1334 @@
+
+> lumina-ui@0.28.16 dev-server /Users/arhansubasi/lumina/ui
+> webpack serve --mode development --config ./webpack-config.js
+
+Building webpack project /Users/arhansubasi/lumina/ui
+mode=development
+<i> [webpack-dev-server] Project is running at:
+<i> [webpack-dev-server] Loopback: http://localhost:9001/, http://[::1]:9001/
+<i> [webpack-dev-server] On Your Network (IPv4): http://10.9.44.9:9001/
+<i> [webpack-dev-server] Content not from webpack is served from '/Users/arhansubasi/lumina/ui/public' directory
+<i> [webpack-dev-server] 404s will fallback to '/index.html'
+[BABEL] Note: The code generator has deoptimised the styling of /Users/arhansubasi/lumina/ui/node_modules/.pnpm/react-dom@17.0.2_react@17.0.2/node_modules/react-dom/cjs/react-dom.development.js as it exceeds the max of 500KB.
+[BABEL] Note: The code generator has deoptimised the styling of /Users/arhansubasi/lumina/ui/node_modules/.pnpm/three@0.141.0/node_modules/three/build/three.module.js as it exceeds the max of 500KB.
+[BABEL] Note: The code generator has deoptimised the styling of /Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar+stellar-sdk@14.1.1/node_modules/@stellar/stellar-sdk/dist/stellar-sdk.min.js as it exceeds the max of 500KB.
+<i> [webpack-dev-middleware] wait until bundle finished: /
+[BABEL] Note: The code generator has deoptimised the styling of /Users/arhansubasi/lumina/ui/node_modules/.pnpm/three-stdlib@2.36.1_three@0.141.0/node_modules/three-stdlib/lights/RectAreaLightUniformsLib.js as it exceeds the max of 500KB.
+[BABEL] Note: The code generator has deoptimised the styling of /Users/arhansubasi/lumina/ui/node_modules/.pnpm/react-reconciler@0.26.2_react@17.0.2/node_modules/react-reconciler/cjs/react-reconciler.development.js as it exceeds the max of 500KB.
+assets by path *.js 9.79 MiB 23 assets
+assets by path img/ 150 KiB 12 assets
+assets by path *.css 455 KiB 9 assets
+assets by path fonts/ 311 KiB 8 assets
+assets by path *.png 19.8 KiB
+  asset android-chrome-192x192.png 6.12 KiB [emitted] [from: static/android-chrome-192x192.png] [copied]
+  + 4 assets
+assets by path *.html 3.37 KiB
+  asset index.html 3.17 KiB [emitted]
+  asset oauthcallback.html 206 bytes [emitted] [from: static/oauthcallback.html] [copied]
+assets by path *.xml 2.27 KiB
+  asset sitemap.xml 2.03 KiB [emitted] [from: static/sitemap.xml] [copied]
+  asset browserconfig.xml 246 bytes [emitted] [from: static/browserconfig.xml] [copied]
++ 5 assets
+Entrypoint app 3.89 MiB (6.66 MiB) = app.44f48ab2859e6f546841.css 319 KiB app.0b7d8beb9bc939543919.js 3.58 MiB 2 auxiliary assets
+orphan modules 6.02 MiB (javascript) 277 KiB (css/mini-extract) 937 bytes (runtime) [orphan] 388 modules
+runtime modules 67.3 KiB 250 modules
+javascript modules 8.43 MiB
+  modules by path ./node_modules/.pnpm/ 7.65 MiB 534 modules
+  modules by path ./views/ 723 KiB 261 modules
+  modules by path ./business-logic/ 66.4 KiB 17 modules
+  modules by path ./util/*.js 4.41 KiB 5 modules
+  modules by path ./*.js 5.48 KiB 3 modules
+  + 3 modules
+css modules 353 KiB
+  modules by path ./views/ 47.5 KiB 35 modules
+  modules by path ./node_modules/.pnpm/ 24.2 KiB 21 modules
+  css ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./styles.scss 282 KiB [built] [code generated]
+./app.config.json 631 bytes [built] [code generated]
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/account/account-address.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/account/account-address.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/account/account-address.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/account/account-address.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/account/account-address.scss 1:9  root stylesheet
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/account/account-address.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/account/account-address.js 10:0-32
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 65:0-42 65:0-42
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/account/identicon.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/account/identicon.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/account/identicon.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/account/identicon.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/account/identicon.scss 1:9  root stylesheet
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/account/identicon.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/account/identicon.js 2:0-26
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 64:0-36 64:0-36
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/asset/asset-link.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/asset/asset-link.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/asset/asset-link.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/asset/asset-link.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/asset/asset-link.scss 1:9  root stylesheet
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/asset/asset-link.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/asset/asset-link.js 11:0-27
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 69:0-35 69:0-35
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/asset/asset-selector.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/asset/asset-selector.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/asset/asset-selector.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/asset/asset-selector.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/asset/asset-selector.scss 1:9  root stylesheet
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/asset/asset-selector.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/asset/asset-selector.js 5:0-31
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 72:0-39 72:0-39
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/contract/sc-val.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/contract/sc-val.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/contract/sc-val.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/contract/sc-val.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/contract/sc-val.scss 1:9  root stylesheet
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/contract/sc-val.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/contract/sc-val.js 7:0-23
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 92:0-34 92:0-34
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/button-group.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/button-group.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/button-group.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/button-group.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/button-group.scss 1:9  root stylesheet
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/button-group.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/button-group.js 3:0-29
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 32:0-40 32:0-40
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/button-group.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/button-group.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/button-group.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 1, column 8 of file:///Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/button-group.scss:1:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+1 | @import "./button";
+
+
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/button-group.scss 2:9  root stylesheet
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/button-group.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/button-group.js 3:0-29
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 32:0-40 32:0-40
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/button.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/button.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/button.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/button.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/button.scss 1:9  root stylesheet
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/button.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/button.js 4:0-23
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 31:0-34 31:0-34
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/code-block.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/code-block.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/code-block.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/code-block.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/code-block.scss 1:9  root stylesheet
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/code-block.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/code-block.js 11:0-27
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 38:0-38 38:0-38
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/dropdown.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/dropdown.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/dropdown.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/dropdown.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/dropdown.scss 1:9  root stylesheet
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/dropdown.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/dropdown.js 7:0-25
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 37:0-36 37:0-36
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/info-tooltip.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/info-tooltip.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/info-tooltip.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/info-tooltip.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/info-tooltip.scss 1:9  root stylesheet
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/info-tooltip.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/info-tooltip.js 5:0-29
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 33:0-40 33:0-40
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/slider.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/slider.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/slider.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/slider.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/slider.scss 1:9  root stylesheet
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/slider.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/slider.js 3:0-23
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 39:0-34 39:0-34
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/tabs.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/tabs.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/tabs.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/tabs.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/tabs.scss 1:9  root stylesheet
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/tabs.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/tabs.js 5:0-21
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 36:0-32 36:0-32
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/tooltip.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/tooltip.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/tooltip.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/tooltip.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/tooltip.scss 1:9  root stylesheet
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/tooltip.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/tooltip.js 3:0-24
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 34:0-35 34:0-35
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/update-highlighter.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/update-highlighter.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/update-highlighter.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/update-highlighter.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/update-highlighter.scss 1:9  root stylesheet
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/update-highlighter.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/update-highlighter.js 5:0-35
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 35:0-46 35:0-46
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/update-highlighter.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/update-highlighter.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/update-highlighter.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 6, column 26 of file:///Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/update-highlighter.scss:6:26:
+Global built-in functions are deprecated and will be removed in Dart Sass 3.0.0.
+Use color.adjust instead.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+6 |   from {background-color: transparentize($color-primary, 0.5);}
+
+
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/update-highlighter.scss 7:27  root stylesheet
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/update-highlighter.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/update-highlighter.js 5:0-35
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 35:0-46 35:0-46
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/update-highlighter.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/update-highlighter.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/update-highlighter.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 6, column 26 of file:///Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/update-highlighter.scss:6:26:
+transparentize() is deprecated. Suggestions:
+
+color.scale($color, $alpha: -50%)
+color.adjust($color, $alpha: -0.5)
+
+More info: https://sass-lang.com/d/color-functions
+
+6 |   from {background-color: transparentize($color-primary, 0.5);}
+
+
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/update-highlighter.scss 7:27  root stylesheet
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/update-highlighter.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/controls/update-highlighter.js 5:0-35
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 35:0-46 35:0-46
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/dex/price-dynamic.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/dex/price-dynamic.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/dex/price-dynamic.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/dex/price-dynamic.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/dex/price-dynamic.scss 1:9  root stylesheet
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/dex/price-dynamic.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/dex/price-dynamic.js 5:0-30
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 79:0-36 79:0-36
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/effect/op-effects.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/effect/op-effects.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/effect/op-effects.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/effect/op-effects.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/effect/op-effects.scss 1:9  root stylesheet
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/effect/op-effects.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/effect/op-effects-view.js 5:0-27
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/tx/tx-operations-list.js 3:0-58 136:49-62
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 83:0-40 83:0-40
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/effect/soroban-tx-metrics.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/effect/soroban-tx-metrics.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/effect/soroban-tx-metrics.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/effect/soroban-tx-metrics.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/effect/soroban-tx-metrics.scss 1:9  root stylesheet
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/effect/soroban-tx-metrics.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/effect/soroban-tx-metrics-view.js 3:0-35
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/effect/op-effects-view.js 4:0-61 30:26-46
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/tx/tx-operations-list.js 3:0-58 136:49-62
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 83:0-40 83:0-40
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss 1:9  root stylesheet
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 1:0-22
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 1, column 8 of file:///Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss:1:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+1 | @import "basic-styles/variables";
+
+
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss 2:9  root stylesheet
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 1:0-22
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 2, column 8 of file:///Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss:2:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+2 | @import "basic-styles/themes";
+
+
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss 3:9  root stylesheet
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 1:0-22
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 3, column 8 of file:///Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss:3:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+3 | @import "basic-styles/scrollbars";
+
+
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss 4:9  root stylesheet
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 1:0-22
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 4, column 8 of file:///Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss:4:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+4 | @import "basic-styles/base";
+
+
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss 5:9  root stylesheet
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 1:0-22
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 11, column 15 of file:///Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/basic-styles/grid.scss:11:15:
+Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div($container-padding, 2) or calc($container-padding / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+11 |     padding: 0 $container-padding/2;
+
+
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/basic-styles/grid.scss 12:16  @import
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss 10:9               root stylesheet
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 1:0-22
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 35, column 20 of file:///Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/basic-styles/base.scss:35:20:
+Global built-in functions are deprecated and will be removed in Dart Sass 3.0.0.
+Use color.adjust instead.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+35 |   background-color: transparentize($color-primary, 0.8) !important;
+
+
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/basic-styles/base.scss 36:21  @import
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss 5:9                root stylesheet
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 1:0-22
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 35, column 20 of file:///Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/basic-styles/base.scss:35:20:
+transparentize() is deprecated. Suggestions:
+
+color.scale($color, $alpha: -80%)
+color.adjust($color, $alpha: -0.8)
+
+More info: https://sass-lang.com/d/color-functions
+
+35 |   background-color: transparentize($color-primary, 0.8) !important;
+
+
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/basic-styles/base.scss 36:21  @import
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss 5:9                root stylesheet
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 1:0-22
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 60, column 17 of file:///Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/basic-styles/table.scss:60:17:
+Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div($container-padding, 2) or calc($container-padding / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+60 |     margin: auto $container-padding/2*-1;
+
+
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/basic-styles/table.scss 61:18  @import
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss 16:9                root stylesheet
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 1:0-22
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+12 repetitive deprecation warnings omitted.
+Run in verbose mode to see all warnings.
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 1:0-22
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/interaction/accordion.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/interaction/accordion.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/interaction/accordion.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/interaction/accordion.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/interaction/accordion.scss 1:9  root stylesheet
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/interaction/accordion.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/interaction/accordion.js 3:0-26
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 48:0-40 48:0-40
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/interaction/block-select.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/interaction/block-select.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/interaction/block-select.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/interaction/block-select.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/interaction/block-select.scss 1:9  root stylesheet
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/interaction/block-select.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/interaction/block-select.js 4:0-29
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 45:0-43 45:0-43
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/interaction/dialog.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/interaction/dialog.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/interaction/dialog.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/interaction/dialog.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/interaction/dialog.scss 1:9  root stylesheet
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/interaction/dialog.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/interaction/dialog.js 3:0-23
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 53:0-37 53:0-37
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/interaction/spoiler.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/interaction/spoiler.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/interaction/spoiler.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/interaction/spoiler.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/interaction/spoiler.scss 1:9  root stylesheet
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/interaction/spoiler.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/interaction/spoiler.js 4:0-24
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 47:0-38 47:0-38
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/toast/toast-notifications.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/toast/toast-notifications.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/toast/toast-notifications.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/toast/toast-notifications.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/toast/toast-notifications.scss 1:9  root stylesheet
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/toast/toast-notifications.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/toast/toast-notifications-block.js 5:0-36
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 41:0-50 41:0-50
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/toast/toast-notifications.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/toast/toast-notifications.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/toast/toast-notifications.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 61, column 23 of file:///Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/toast/toast-notifications.scss:61:23:
+Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div($space-micro, 2) or calc($space-micro / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+61 |         padding-right: $space-micro/2;
+
+
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/toast/toast-notifications.scss 62:24  root stylesheet
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/toast/toast-notifications.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/toast/toast-notifications-block.js 5:0-36
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 41:0-50 41:0-50
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/tx/op-description.scss (./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/tx/op-description.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/tx/op-description.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/tx/op-description.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+../../../../../@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/tx/op-description.scss 1:9  root stylesheet
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/tx/op-description.scss
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/tx/tx-operations-list.js 8:0-31
+ @ ./node_modules/.pnpm/@stellar-expert+ui-framework@1.15.4_@stellar-expert+asset-descriptor@1.4.0_@stellar+ste_11f837eff6f891968ae872d506b7a519/node_modules/@stellar-expert/ui-framework/index.js 83:0-40 83:0-40
+ @ ./app.js 4:0-124 60:2-33 64:2-10 79:2-35
+
+WARNING in ./styles.scss (./styles.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./styles.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/styles.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+/Users/arhansubasi/lumina/ui/styles.scss 1:9  root stylesheet
+ @ ./styles.scss
+ @ ./app.js 12:0-23
+
+WARNING in ./styles.scss (./styles.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./styles.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 1, column 8 of file:///Users/arhansubasi/lumina/ui/styles.scss:1:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+1 | @import '~@stellar-expert/ui-framework/index.scss';
+
+
+/Users/arhansubasi/lumina/ui/styles.scss 2:9  root stylesheet
+ @ ./styles.scss
+ @ ./app.js 12:0-23
+
+WARNING in ./styles.scss (./styles.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./styles.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 17, column 8 of file:///Users/arhansubasi/lumina/ui/styles.scss:17:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+17 | @import "views/components/animations";
+
+
+/Users/arhansubasi/lumina/ui/styles.scss 18:9  root stylesheet
+ @ ./styles.scss
+ @ ./app.js 12:0-23
+
+WARNING in ./styles.scss (./styles.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./styles.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 19, column 8 of file:///Users/arhansubasi/lumina/ui/styles.scss:19:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+19 | @import "views/components/search-box";
+
+
+/Users/arhansubasi/lumina/ui/styles.scss 20:9  root stylesheet
+ @ ./styles.scss
+ @ ./app.js 12:0-23
+
+WARNING in ./styles.scss (./styles.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./styles.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 20, column 8 of file:///Users/arhansubasi/lumina/ui/styles.scss:20:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+20 | @import "views/components/tracer";
+
+
+/Users/arhansubasi/lumina/ui/styles.scss 21:9  root stylesheet
+ @ ./styles.scss
+ @ ./app.js 12:0-23
+
+WARNING in ./styles.scss (./styles.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./styles.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+5 repetitive deprecation warnings omitted.
+Run in verbose mode to see all warnings.
+ @ ./styles.scss
+ @ ./app.js 12:0-23
+
+WARNING in ./views/app-fixes.scss (./views/app-fixes.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./views/app-fixes.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/views/app-fixes.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+/Users/arhansubasi/lumina/ui/views/app-fixes.scss 1:9  root stylesheet
+ @ ./views/app-fixes.scss
+ @ ./app.js 13:0-32
+
+WARNING in ./views/asset-lists/asset-lists.scss (./views/asset-lists/asset-lists.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./views/asset-lists/asset-lists.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/views/asset-lists/asset-lists.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+/Users/arhansubasi/lumina/ui/views/asset-lists/asset-lists.scss 1:9  root stylesheet
+ @ ./views/asset-lists/asset-lists.scss
+ @ ./views/asset-lists/asset-list-catalogue-view.js 5:0-28
+ @ ./views/asset-lists/asset-list-router.js 4:0-65 17:19-41
+ @ ./views/router.js 65:28-106
+ @ ./app.js 5:0-36 73:34-40
+
+WARNING in ./views/blog/blog.scss (./views/blog/blog.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./views/blog/blog.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/views/blog/blog.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+/Users/arhansubasi/lumina/ui/views/blog/blog.scss 1:9  root stylesheet
+ @ ./views/blog/blog.scss
+ @ ./views/blog/blog-post-view.js 6:0-21
+ @ ./views/blog/blog-router.js 4:0-40 18:19-27
+ @ ./views/router.js 71:28-86
+ @ ./app.js 5:0-36 73:34-40
+
+WARNING in ./views/components/address-label-manager.scss (./views/components/address-label-manager.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./views/components/address-label-manager.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/views/components/address-label-manager.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+/Users/arhansubasi/lumina/ui/views/components/address-label-manager.scss 1:9  root stylesheet
+ @ ./views/components/address-label-manager.scss
+ @ ./views/components/address-label-manager.js 3:0-38
+ @ ./views/explorer/account/account-view.js 14:0-73 125:34-53
+ @ ./views/explorer/explorer-router.js 8:0-45 56:19-26
+ @ ./views/router.js 43:28-98
+ @ ./app.js 5:0-36 73:34-40
+
+WARNING in ./views/components/ai-search.scss (./views/components/ai-search.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./views/components/ai-search.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/views/components/ai-search.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+/Users/arhansubasi/lumina/ui/views/components/ai-search.scss 1:9  root stylesheet
+ @ ./views/components/ai-search.scss
+ @ ./views/components/ai-search-button.js 2:0-26
+ @ ./views/explorer/search/dedicated-search-box-view.js 3:0-63 52:30-44
+ @ ./views/explorer/explorer-router.js 20:0-72 120:19-41
+ @ ./views/router.js 43:28-98
+ @ ./app.js 5:0-36 73:34-40
+
+WARNING in ./views/components/breadcrumbs.scss (./views/components/breadcrumbs.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./views/components/breadcrumbs.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/views/components/breadcrumbs.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+/Users/arhansubasi/lumina/ui/views/components/breadcrumbs.scss 1:9  root stylesheet
+ @ ./views/components/breadcrumbs.scss
+ @ ./views/components/breadcrumbs.js 3:0-28
+ @ ./views/layout/layout-view.js 6:0-56 29:36-47
+ @ ./views/router.js 4:0-42 22:36-42
+ @ ./app.js 5:0-36 73:34-40
+
+WARNING in ./views/components/chart/chart.scss (./views/components/chart/chart.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./views/components/chart/chart.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/views/components/chart/chart.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+/Users/arhansubasi/lumina/ui/views/components/chart/chart.scss 1:9  root stylesheet
+ @ ./views/components/chart/chart.scss
+ @ ./views/components/chart/chart.js 9:0-22
+ @ ./views/explorer/asset/charts/asset-supply-chart-view.js 2:0-52 6:15-38 14:40-52 15:66-78 117:27-32
+ @ ./views/explorer/widget/asset-widget.js 6:0-75 47:30-50
+ @ ./views/explorer/widget/widget-router.js 5:0-41 20:17-28
+ @ ./views/router.js 19:22-97
+ @ ./app.js 5:0-36 73:34-40
+
+WARNING in ./views/components/data-refresh-indicator.scss (./views/components/data-refresh-indicator.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./views/components/data-refresh-indicator.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/views/components/data-refresh-indicator.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+/Users/arhansubasi/lumina/ui/views/components/data-refresh-indicator.scss 1:9  root stylesheet
+ @ ./views/components/data-refresh-indicator.scss
+ @ ./views/components/data-refresh-indicator.js 2:0-39
+ @ ./views/explorer/tx/tx-view.js 7:0-79 66:35-55
+ @ ./views/explorer/explorer-router.js 12:0-30 77:19-21
+ @ ./views/router.js 43:28-98
+ @ ./app.js 5:0-36 73:34-40
+
+WARNING in ./views/components/grid-data-actions.scss (./views/components/grid-data-actions.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./views/components/grid-data-actions.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/views/components/grid-data-actions.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+/Users/arhansubasi/lumina/ui/views/components/grid-data-actions.scss 1:9  root stylesheet
+ @ ./views/components/grid-data-actions.scss
+ @ ./views/components/grid-data-actions.js 5:0-34
+ @ ./views/directory/directory-blocked-domains-view.js 5:0-62 88:30-45
+ @ ./views/directory/directory-router.js 8:0-75 45:19-46
+ @ ./views/router.js 33:28-101
+ @ ./app.js 5:0-36 73:34-40
+
+WARNING in ./views/components/keyboard-shortcuts.scss (./views/components/keyboard-shortcuts.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./views/components/keyboard-shortcuts.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/views/components/keyboard-shortcuts.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+/Users/arhansubasi/lumina/ui/views/components/keyboard-shortcuts.scss 1:9  root stylesheet
+ @ ./views/components/keyboard-shortcuts.scss
+ @ ./views/components/keyboard-shortcuts.js 3:0-35
+ @ ./views/components/keyboard-shortcuts-provider.js 2:0-83 15:6-26 17:43-64
+ @ ./app.js 7:0-91 72:32-57
+
+WARNING in ./views/components/ledger-navigation.scss (./views/components/ledger-navigation.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./views/components/ledger-navigation.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/views/components/ledger-navigation.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+/Users/arhansubasi/lumina/ui/views/components/ledger-navigation.scss 1:9  root stylesheet
+ @ ./views/components/ledger-navigation.scss
+ @ ./views/components/ledger-navigation.js 3:0-34
+ @ ./views/explorer/ledger/ledger-view.js 8:0-70 37:33-49
+ @ ./views/explorer/explorer-router.js 11:0-42 47:19-25
+ @ ./views/router.js 43:28-98
+ @ ./app.js 5:0-36 73:34-40
+
+WARNING in ./views/components/ledger-timestamp-converter.scss (./views/components/ledger-timestamp-converter.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./views/components/ledger-timestamp-converter.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/views/components/ledger-timestamp-converter.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+/Users/arhansubasi/lumina/ui/views/components/ledger-timestamp-converter.scss 1:9  root stylesheet
+ @ ./views/components/ledger-timestamp-converter.scss
+ @ ./views/components/ledger-timestamp-converter.js 2:0-43
+ @ ./views/explorer/ledger/ledger-view.js 9:0-87 40:26-50
+ @ ./views/explorer/explorer-router.js 11:0-42 47:19-25
+ @ ./views/router.js 43:28-98
+ @ ./app.js 5:0-36 73:34-40
+
+WARNING in ./views/components/login-status.scss (./views/components/login-status.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./views/components/login-status.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/views/components/login-status.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+/Users/arhansubasi/lumina/ui/views/components/login-status.scss 1:9  root stylesheet
+ @ ./views/components/login-status.scss
+ @ ./views/components/login-status.js 5:0-29
+ @ ./views/layout/top-menu-view.js 5:0-53
+ @ ./views/router.js 5:0-45 23:34-41
+ @ ./app.js 5:0-36 73:34-40
+
+WARNING in ./views/components/notification-system.scss (./views/components/notification-system.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./views/components/notification-system.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/views/components/notification-system.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+/Users/arhansubasi/lumina/ui/views/components/notification-system.scss 1:9  root stylesheet
+ @ ./views/components/notification-system.scss
+ @ ./views/components/notification-system.js 2:0-36
+ @ ./app.js 8:0-78 71:27-47
+
+WARNING in ./views/components/offline-detector.scss (./views/components/offline-detector.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./views/components/offline-detector.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/views/components/offline-detector.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+/Users/arhansubasi/lumina/ui/views/components/offline-detector.scss 1:9  root stylesheet
+ @ ./views/components/offline-detector.scss
+ @ ./views/components/offline-detector.js 2:0-33
+ @ ./app.js 6:0-70 85:27-42
+
+WARNING in ./views/components/openrouter-settings.scss (./views/components/openrouter-settings.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./views/components/openrouter-settings.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/views/components/openrouter-settings.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+/Users/arhansubasi/lumina/ui/views/components/openrouter-settings.scss 1:9  root stylesheet
+ @ ./views/components/openrouter-settings.scss
+ @ ./views/components/openrouter-settings.js 3:0-36
+ @ ./views/components/user-settings.js 3:0-59 218:28-46
+ @ ./views/router.js 53:28-98
+ @ ./app.js 5:0-36 73:34-40
+
+WARNING in ./views/components/price-dynamic.scss (./views/components/price-dynamic.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./views/components/price-dynamic.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/views/components/price-dynamic.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+/Users/arhansubasi/lumina/ui/views/components/price-dynamic.scss 1:9  root stylesheet
+ @ ./views/components/price-dynamic.scss
+ @ ./views/components/price-dynamic.js 5:0-30
+ @ ./views/explorer/asset/asset-price-change.js 4:0-58 17:79-91
+ @ ./views/explorer/asset/asset-summary-view.js 6:0-52 170:37-53
+ @ ./views/explorer/widget/asset-widget.js 5:0-59 35:30-46
+ @ ./views/explorer/widget/widget-router.js 5:0-41 20:17-28
+ @ ./views/router.js 19:22-97
+ @ ./app.js 5:0-36 73:34-40
+
+WARNING in ./views/components/search-box.scss (./views/components/search-box.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./views/components/search-box.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/views/components/search-box.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+/Users/arhansubasi/lumina/ui/views/components/search-box.scss 1:9  root stylesheet
+ @ ./views/components/search-box.scss
+ @ ./views/explorer/search/search-box-view.js 6:0-42
+ @ ./views/explorer/search/dedicated-search-box-view.js 2:0-46 47:38-51
+ @ ./views/explorer/explorer-router.js 20:0-72 120:19-41
+ @ ./views/router.js 43:28-98
+ @ ./app.js 5:0-36 73:34-40
+
+WARNING in ./views/components/share-button.scss (./views/components/share-button.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./views/components/share-button.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/views/components/share-button.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+/Users/arhansubasi/lumina/ui/views/components/share-button.scss 1:9  root stylesheet
+ @ ./views/components/share-button.scss
+ @ ./views/components/share-button.js 2:0-29
+ @ ./views/explorer/tx/tx-view.js 6:0-60 69:28-39
+ @ ./views/explorer/explorer-router.js 12:0-30 77:19-21
+ @ ./views/router.js 43:28-98
+ @ ./app.js 5:0-36 73:34-40
+
+WARNING in ./views/components/smart-search.scss (./views/components/smart-search.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./views/components/smart-search.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/views/components/smart-search.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+/Users/arhansubasi/lumina/ui/views/components/smart-search.scss 1:9  root stylesheet
+ @ ./views/components/smart-search.scss
+ @ ./views/components/smart-search.js 4:0-29
+ @ ./views/layout/top-menu-view.js 4:0-57 89:38-49
+ @ ./views/router.js 5:0-45 23:34-41
+ @ ./app.js 5:0-36 73:34-40
+
+WARNING in ./views/components/theme-toggle.scss (./views/components/theme-toggle.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./views/components/theme-toggle.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/views/components/theme-toggle.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+/Users/arhansubasi/lumina/ui/views/components/theme-toggle.scss 1:9  root stylesheet
+ @ ./views/components/theme-toggle.scss
+ @ ./views/components/theme-toggle.js 2:0-29
+ @ ./views/components/user-settings.js 2:0-55 14:6-14 77:30-41
+ @ ./views/router.js 53:28-98
+ @ ./app.js 5:0-36 73:34-40
+
+WARNING in ./views/components/tx-effects-view.scss (./views/components/tx-effects-view.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./views/components/tx-effects-view.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/views/components/tx-effects-view.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+/Users/arhansubasi/lumina/ui/views/components/tx-effects-view.scss 1:9  root stylesheet
+ @ ./views/components/tx-effects-view.scss
+ @ ./views/components/tx-effects-view.js 2:0-32
+ @ ./views/explorer/tx/tx-details-view.js 9:0-65 240:36-49
+ @ ./views/explorer/tx/tx-view.js 9:0-51 74:26-44
+ @ ./views/explorer/explorer-router.js 12:0-30 77:19-21
+ @ ./views/router.js 43:28-98
+ @ ./app.js 5:0-36 73:34-40
+
+WARNING in ./views/components/tx-memo-decoder.scss (./views/components/tx-memo-decoder.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./views/components/tx-memo-decoder.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/views/components/tx-memo-decoder.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+/Users/arhansubasi/lumina/ui/views/components/tx-memo-decoder.scss 1:9  root stylesheet
+ @ ./views/components/tx-memo-decoder.scss
+ @ ./views/components/tx-memo-decoder.js 3:0-32
+ @ ./views/explorer/tx/tx-details-view.js 8:0-65 216:32-45
+ @ ./views/explorer/tx/tx-view.js 9:0-51 74:26-44
+ @ ./views/explorer/explorer-router.js 12:0-30 77:19-21
+ @ ./views/router.js 43:28-98
+ @ ./app.js 5:0-36 73:34-40
+
+WARNING in ./views/components/tx-operation-tree.scss (./views/components/tx-operation-tree.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./views/components/tx-operation-tree.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/views/components/tx-operation-tree.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+/Users/arhansubasi/lumina/ui/views/components/tx-operation-tree.scss 1:9  root stylesheet
+ @ ./views/components/tx-operation-tree.scss
+ @ ./views/components/tx-operation-tree.js 2:0-34
+ @ ./views/explorer/tx/tx-details-view.js 7:0-69 234:30-45
+ @ ./views/explorer/tx/tx-view.js 9:0-51 74:26-44
+ @ ./views/explorer/explorer-router.js 12:0-30 77:19-21
+ @ ./views/router.js 43:28-98
+ @ ./app.js 5:0-36 73:34-40
+
+WARNING in ./views/components/user-settings.scss (./views/components/user-settings.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./views/components/user-settings.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/views/components/user-settings.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+/Users/arhansubasi/lumina/ui/views/components/user-settings.scss 1:9  root stylesheet
+ @ ./views/components/user-settings.scss
+ @ ./views/components/user-settings.js 4:0-30
+ @ ./views/router.js 53:28-98
+ @ ./app.js 5:0-36 73:34-40
+
+WARNING in ./views/directory/directory-inline-tags.scss (./views/directory/directory-inline-tags.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./views/directory/directory-inline-tags.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/views/directory/directory-inline-tags.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+/Users/arhansubasi/lumina/ui/views/directory/directory-inline-tags.scss 1:9  root stylesheet
+ @ ./views/directory/directory-inline-tags.scss
+ @ ./views/directory/directory-tags-line-view.js 3:0-38
+ @ ./views/directory/directory-view.js 6:0-63 159:46-67
+ @ ./views/directory/directory-router.js 4:0-41 51:19-28
+ @ ./views/router.js 33:28-101
+ @ ./app.js 5:0-36 73:34-40
+
+WARNING in ./views/directory/directory-tags.scss (./views/directory/directory-tags.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./views/directory/directory-tags.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/views/directory/directory-tags.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+/Users/arhansubasi/lumina/ui/views/directory/directory-tags.scss 1:9  root stylesheet
+ @ ./views/directory/directory-tags.scss
+ @ ./views/directory/directory-view.js 10:0-31
+ @ ./views/directory/directory-router.js 4:0-41 51:19-28
+ @ ./views/router.js 33:28-101
+ @ ./app.js 5:0-36 73:34-40
+
+WARNING in ./views/explorer/account/account-balances.scss (./views/explorer/account/account-balances.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./views/explorer/account/account-balances.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/views/explorer/account/account-balances.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+/Users/arhansubasi/lumina/ui/views/explorer/account/account-balances.scss 1:9  root stylesheet
+ @ ./views/explorer/account/account-balances.scss
+ @ ./views/explorer/account/account-current-balances-view.js 5:0-33
+ @ ./views/explorer/widget/account-widget.js 5:0-74 61:30-48
+ @ ./views/explorer/widget/widget-router.js 4:0-45 17:17-30
+ @ ./views/router.js 19:22-97
+ @ ./app.js 5:0-36 73:34-40
+
+WARNING in ./views/explorer/market/market.scss (./views/explorer/market/market.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./views/explorer/market/market.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/views/explorer/market/market.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+/Users/arhansubasi/lumina/ui/views/explorer/market/market.scss 1:9  root stylesheet
+ @ ./views/explorer/market/market.scss
+ @ ./views/explorer/market/market-view.js 14:0-23
+ @ ./views/explorer/explorer-router.js 13:0-46 80:19-29
+ @ ./views/router.js 43:28-98
+ @ ./app.js 5:0-36 73:34-40
+
+WARNING in ./views/explorer/operation/activity-stream.scss (./views/explorer/operation/activity-stream.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./views/explorer/operation/activity-stream.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/views/explorer/operation/activity-stream.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+/Users/arhansubasi/lumina/ui/views/explorer/operation/activity-stream.scss 1:9  root stylesheet
+ @ ./views/explorer/operation/activity-stream.scss
+ @ ./views/explorer/operation/activity-stream-view.js 7:0-32
+ @ ./views/explorer/explorer-router.js 19:0-62 126:19-33
+ @ ./views/router.js 43:28-98
+ @ ./app.js 5:0-36 73:34-40
+
+WARNING in ./views/explorer/search/search.scss (./views/explorer/search/search.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./views/explorer/search/search.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/views/explorer/search/search.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+/Users/arhansubasi/lumina/ui/views/explorer/search/search.scss 1:9  root stylesheet
+ @ ./views/explorer/search/search.scss
+ @ ./views/explorer/search/search-results-view.js 17:0-23
+ @ ./views/explorer/explorer-router.js 18:0-58 123:19-33
+ @ ./views/router.js 43:28-98
+ @ ./app.js 5:0-36 73:34-40
+
+WARNING in ./views/explorer/tx/filters/tx-filter.scss (./views/explorer/tx/filters/tx-filter.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./views/explorer/tx/filters/tx-filter.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/views/explorer/tx/filters/tx-filter.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+/Users/arhansubasi/lumina/ui/views/explorer/tx/filters/tx-filter.scss 1:9  root stylesheet
+ @ ./views/explorer/tx/filters/tx-filter.scss
+ @ ./views/explorer/tx/filters/tx-filter-view.js 5:0-26
+ @ ./views/explorer/tx/tx-history-view.js 7:0-79 12:66-87 12:107-128 61:26-38
+ @ ./views/explorer/pages/payment-locator-page-view.js 4:0-50 33:34-47
+ @ ./views/explorer/explorer-router.js 110:22-106
+ @ ./views/router.js 43:28-98
+ @ ./app.js 5:0-36 73:34-40
+
+WARNING in ./views/explorer/widget/embed-widget-trigger.scss (./views/explorer/widget/embed-widget-trigger.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./views/explorer/widget/embed-widget-trigger.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/views/explorer/widget/embed-widget-trigger.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+/Users/arhansubasi/lumina/ui/views/explorer/widget/embed-widget-trigger.scss 1:9  root stylesheet
+ @ ./views/explorer/widget/embed-widget-trigger.scss
+ @ ./views/explorer/widget/embed-widget-trigger.js 7:0-37
+ @ ./views/explorer/ledger/ledger-activity-view.js 6:0-64 64:28-46
+ @ ./views/explorer/widget/network-widget.js 4:0-64 20:36-54
+ @ ./views/explorer/widget/widget-router.js 6:0-45 23:17-30
+ @ ./views/router.js 19:22-97
+ @ ./app.js 5:0-36 73:34-40
+
+WARNING in ./views/explorer/widget/widget.scss (./views/explorer/widget/widget.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./views/explorer/widget/widget.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/views/explorer/widget/widget.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+/Users/arhansubasi/lumina/ui/views/explorer/widget/widget.scss 1:9  root stylesheet
+ @ ./views/explorer/widget/widget.scss
+ @ ./views/explorer/widget/widget.js 5:0-23
+ @ ./views/explorer/widget/account-widget.js 7:0-30 46:32-38 57:32-38 66:32-38
+ @ ./views/explorer/widget/widget-router.js 4:0-45 17:17-30
+ @ ./views/router.js 19:22-97
+ @ ./app.js 5:0-36 73:34-40
+
+WARNING in ./views/graph/three-galaxy.scss (./views/graph/three-galaxy.scss.webpack[javascript/auto]!=!./node_modules/.pnpm/css-loader@7.1.2_webpack@5.103.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./views/graph/three-galaxy.scss)
+Module Warning (from ./node_modules/.pnpm/sass-loader@16.0.6_sass-embedded@1.93.3_sass@1.93.3_webpack@5.103.0/node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///Users/arhansubasi/lumina/ui/views/graph/three-galaxy.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "~@stellar-expert/ui-framework/basic-styles/variables.scss";
+
+
+/Users/arhansubasi/lumina/ui/views/graph/three-galaxy.scss 1:9  root stylesheet
+ @ ./views/graph/three-galaxy.scss
+ @ ./views/graph/three-galaxy-overlay.js 3:0-29
+ @ ./views/graph/three-graph-router.js 4:0-56 22:73-91
+ @ ./views/router.js 83:28-95
+ @ ./app.js 5:0-36 73:34-40
+
+webpack 5.103.0 compiled with 78 warnings in 10377 ms
+<i> [webpack-dev-server] Gracefully shutting down. To force exit, press ^C again. Please wait...

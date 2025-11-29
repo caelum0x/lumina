@@ -1,0 +1,48 @@
+.mobile-3d-controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: none; // Hidden on desktop
+
+    @media (max-width: 768px) {
+        display: block;
+    }
+}
+
+.control-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.control-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(0, 240, 255, 0.5);
+    color: #00f0ff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    touch-action: manipulation;
+
+    &:active {
+        transform: scale(0.9);
+        background: rgba(0, 240, 255, 0.3);
+    }
+}
+
+// Desktop: hide mobile controls
+@media (min-width: 769px) {
+    .mobile-3d-controls {
+        display: none;
+    }
+}
+

@@ -1,0 +1,50 @@
+.offline-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 12px 20px;
+    background: rgba(255, 68, 0, 0.9);
+    color: #fff;
+    text-align: center;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 600;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    animation: slideDown 0.3s ease;
+
+    &.reconnected {
+        background: rgba(0, 255, 0, 0.9);
+        animation: slideDown 0.3s ease, fadeOut 0.3s ease 2.7s forwards;
+    }
+}
+
+.offline-icon {
+    font-size: 1.2rem;
+}
+
+.offline-message {
+    font-size: 0.9rem;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+

@@ -1,0 +1,66 @@
+/* Global fixes for Lumina 3D */
+
+/* Purple theme - override blue */
+:root {
+  --color-primary: #8B5CF6;
+  --color-primary-dark: #7C3AED;
+  --color-primary-light: #A78BFA;
+  --color-link: #8B5CF6;
+  --color-link-hover: #7C3AED;
+}
+
+a, .link {
+  color: #8B5CF6 !important;
+}
+
+a:hover, .link:hover {
+  color: #7C3AED !important;
+}
+
+.button, button {
+  background-color: #8B5CF6 !important;
+  border-color: #8B5CF6 !important;
+}
+
+.button:hover, button:hover {
+  background-color: #7C3AED !important;
+  border-color: #7C3AED !important;
+}
+
+/* Fix search bar - CRITICAL */
+.search-box,
+.search-box *,
+.search-box input,
+.search-box .dropdown {
+  position: relative !important;
+  z-index: 10000 !important;
+  pointer-events: auto !important;
+}
+
+.search-box.shrinkable {
+  z-index: 10000 !important;
+}
+
+header,
+.top-menu,
+nav {
+  position: relative;
+  z-index: 9999 !important;
+  pointer-events: auto !important;
+}
+
+/* Ensure 3D canvas doesn't block UI */
+.three-galaxy-container,
+.three-galaxy-container canvas {
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+.three-galaxy-overlay {
+  z-index: 10 !important;
+  pointer-events: none !important;
+}
+
+.three-galaxy-overlay * {
+  pointer-events: auto !important;
+}

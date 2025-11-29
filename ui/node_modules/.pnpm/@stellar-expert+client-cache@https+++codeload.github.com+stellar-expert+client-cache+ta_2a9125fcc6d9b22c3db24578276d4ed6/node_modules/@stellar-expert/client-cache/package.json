@@ -1,0 +1,17 @@
+{
+  "name": "@stellar-expert/client-cache",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Simple in-browser cache for API responses and other short-lived data",
+  "main": "index.js",
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stellar-expert/client-cache.git"
+  },
+  "author": "orbitlens <orbit@stellar.expert>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stellar-expert/client-cache/issues"
+  }
+}

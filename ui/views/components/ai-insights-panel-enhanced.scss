@@ -1,0 +1,161 @@
+.ai-insights-enhanced {
+  background: rgba(0, 0, 0, 0.9);
+  border: 1px solid #00ffff;
+  border-radius: 8px;
+  padding: 1rem;
+  max-height: 600px;
+  overflow-y: auto;
+
+  .ai-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #333;
+
+    button {
+      background: transparent;
+      border: none;
+      color: #888;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &:hover { color: #00ffff; }
+      &.active {
+        color: #00ffff;
+        border-bottom: 2px solid #00ffff;
+      }
+    }
+  }
+
+  .ai-tab-content {
+    .insight-card {
+      background: rgba(0, 255, 255, 0.05);
+      border-left: 3px solid #00ffff;
+      padding: 0.75rem;
+      margin-bottom: 0.75rem;
+      border-radius: 4px;
+
+      h4 {
+        margin: 0 0 0.5rem 0;
+        color: #00ffff;
+        font-size: 0.9rem;
+      }
+
+      p {
+        margin: 0;
+        color: #ccc;
+        font-size: 0.85rem;
+        line-height: 1.4;
+      }
+
+      .health-score {
+        font-size: 2rem;
+        font-weight: bold;
+        margin: 0.5rem 0;
+      }
+    }
+
+    .soroban-stats {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+
+      .stat {
+        flex: 1;
+        background: rgba(0, 255, 255, 0.1);
+        padding: 0.75rem;
+        border-radius: 4px;
+        text-align: center;
+
+        .label {
+          display: block;
+          color: #888;
+          font-size: 0.75rem;
+          margin-bottom: 0.25rem;
+        }
+
+        .value {
+          display: block;
+          color: #00ffff;
+          font-size: 1.5rem;
+          font-weight: bold;
+        }
+      }
+    }
+
+    h4 {
+      color: #00ffff;
+      margin: 1rem 0 0.5rem 0;
+      font-size: 0.9rem;
+    }
+
+    .contract-list {
+      .contract-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.5rem;
+        background: rgba(0, 255, 255, 0.05);
+        border-radius: 4px;
+        margin-bottom: 0.5rem;
+
+        .contract-rank {
+          color: #00ffff;
+          font-weight: bold;
+          min-width: 2rem;
+        }
+
+        .contract-info {
+          flex: 1;
+
+          .contract-addr {
+            color: #fff;
+            font-family: monospace;
+            font-size: 0.85rem;
+          }
+
+          .contract-stats {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.25rem;
+
+            span {
+              color: #888;
+              font-size: 0.75rem;
+            }
+          }
+        }
+      }
+    }
+
+    .pattern-section {
+      margin-bottom: 1rem;
+
+      h4 {
+        margin-bottom: 0.5rem;
+      }
+
+      .pattern-item {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+        border-radius: 4px;
+        color: #ccc;
+        font-size: 0.85rem;
+      }
+    }
+  }
+
+  .ai-insights-loading,
+  .ai-insights-error,
+  .ai-insights-empty {
+    text-align: center;
+    padding: 2rem;
+    color: #888;
+  }
+
+  .ai-insights-error {
+    color: #f44;
+  }
+}

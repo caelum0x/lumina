@@ -1,0 +1,132 @@
+.skeleton-loader {
+    animation: skeleton-pulse 1.5s ease-in-out infinite;
+    background: linear-gradient(
+        90deg,
+        var(--color-alt-bg, #f0f0f0) 0%,
+        var(--color-bg, #ffffff) 50%,
+        var(--color-alt-bg, #f0f0f0) 100%
+    );
+    background-size: 200% 100%;
+}
+
+.skeleton-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.skeleton-line {
+    height: 1em;
+    border-radius: 4px;
+}
+
+.skeleton-rounded {
+    border-radius: 8px;
+}
+
+.skeleton-circle {
+    border-radius: 50%;
+}
+
+.skeleton-card {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--color-border, #e0e0e0);
+}
+
+.skeleton-header {
+    background: var(--color-alt-bg, #f0f0f0);
+}
+
+.skeleton-content {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.skeleton-table {
+    width: 100%;
+}
+
+.skeleton-table-header,
+.skeleton-table-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1em;
+    padding: 0.75em;
+    border-bottom: 1px solid var(--color-border, #e0e0e0);
+}
+
+.skeleton-table-header {
+    background: var(--color-alt-bg, #f0f0f0);
+    font-weight: 600;
+}
+
+.skeleton-cell {
+    height: 1.2em;
+    border-radius: 4px;
+}
+
+.skeleton-chart {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: 1em;
+    border: 1px solid var(--color-border, #e0e0e0);
+    border-radius: 8px;
+    background: var(--color-bg, #ffffff);
+}
+
+.skeleton-chart-bars {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    gap: 0.5em;
+}
+
+.skeleton-chart-bar {
+    flex: 1;
+    border-radius: 4px 4px 0 0;
+    min-height: 20px;
+}
+
+@keyframes skeleton-pulse {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+// Dark theme support
+[data-theme="dark"] .skeleton-loader,
+.dark .skeleton-loader {
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.05) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0.05) 100%
+    );
+    background-size: 200% 100%;
+}
+
+[data-theme="dark"] .skeleton-header,
+.dark .skeleton-header {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .skeleton-table-header,
+.dark .skeleton-table-header {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .skeleton-chart,
+.dark .skeleton-chart {
+    background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+

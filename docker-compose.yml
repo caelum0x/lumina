@@ -1,0 +1,145 @@
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: lumina-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - lumina-network
+    healthcheck:
+      test: redis-cli ping
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    command: redis-server --appendonly yes
+
+  mongodb:
+    image: mongo:7.0
+    container_name: lumina-mongodb
+    ports:
+      - "27087:27017"
+    environment:
+      MONGO_INITDB_DATABASE: se_pub802
+    volumes:
+      - mongodb_data:/data/db
+      - ./docker/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    networks:
+      - lumina-network
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  mongodb-archive:
+    image: mongo:7.0
+    container_name: lumina-mongodb-archive
+    ports:
+      - "40217:27017"
+    environment:
+      MONGO_INITDB_DATABASE: se_archive
+    volumes:
+      - mongodb_archive_data:/data/db
+    networks:
+      - lumina-network
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.11.0
+    container_name: lumina-elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+      - "9201:9200"
+      - "9301:9300"
+    volumes:
+      - elasticsearch_data:/usr/share/elasticsearch/data
+    networks:
+      - lumina-network
+    healthcheck:
+      test: curl -s http://localhost:9200/_cluster/health | grep -q '"status":"green\|yellow"'
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    container_name: lumina-api
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - NODE_ENV=development
+      - MODE=development
+      - MONGODB_URI=mongodb://mongodb:27017/se_pub802
+      - MONGODB_ARCHIVE_URI=mongodb://mongodb-archive:27017/se_archive
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+      - HORIZON_URL_PUBLIC=https://horizon.stellar.org
+      - HORIZON_URL_TESTNET=https://horizon-testnet.stellar.org
+      - API_CACHE_DISABLED=false
+      - CORS_WHITELIST=http://localhost:3000,http://localhost:9001
+      - ENABLE_3D_STREAM=true
+      - ENABLE_SSE_STREAMING=true
+      - REDIS_URL=redis://redis:6379
+    volumes:
+      - ./api:/app
+      - /app/node_modules
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      mongodb-archive:
+        condition: service_healthy
+      elasticsearch:
+        condition: service_healthy
+    networks:
+      - lumina-network
+    command: npm start
+
+  ui:
+    build:
+      context: ./ui
+      dockerfile: Dockerfile
+    container_name: lumina-ui
+    ports:
+      - "9001:9001"
+    environment:
+      - REACT_APP_API_ENDPOINT=http://localhost:3000
+      - REACT_APP_DEFAULT_NETWORK=public
+      - REACT_APP_HORIZON_URL_PUBLIC=https://horizon.stellar.org
+      - REACT_APP_HORIZON_URL_TESTNET=https://horizon-testnet.stellar.org
+      - REACT_APP_ENABLE_3D_VIEW=true
+      - REACT_APP_ENABLE_SSE_STREAMING=true
+      - REACT_APP_ENABLE_VR_MODE=false
+      - REACT_APP_3D_MAX_PARTICLES=2000
+      - REACT_APP_3D_TARGET_FPS=60
+      - REACT_APP_3D_WHALE_THRESHOLD=50000
+      - REACT_APP_3D_HIGH_FEE_THRESHOLD=10000000
+      - NODE_ENV=development
+    volumes:
+      - ./ui:/app
+      - /app/node_modules
+    depends_on:
+      - api
+    networks:
+      - lumina-network
+    command: pnpm dev-server
+
+volumes:
+  redis_data:
+  mongodb_data:
+  mongodb_archive_data:
+  elasticsearch_data:
+
+networks:
+  lumina-network:
+    driver: bridge

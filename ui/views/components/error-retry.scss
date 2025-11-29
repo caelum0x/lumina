@@ -1,0 +1,66 @@
+.error-retry-container {
+    padding: 15px;
+    background: rgba(255, 0, 0, 0.1);
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.error-message {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ff0000;
+    font-size: 0.9rem;
+}
+
+.error-icon {
+    font-size: 1.2rem;
+}
+
+.error-text {
+    flex: 1;
+}
+
+.retry-count {
+    color: #999;
+    font-size: 0.85rem;
+}
+
+.retry-button {
+    padding: 8px 16px;
+    background: rgba(255, 0, 0, 0.2);
+    border: 1px solid rgba(255, 0, 0, 0.5);
+    border-radius: 4px;
+    color: #ff0000;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+
+    &:hover:not(:disabled) {
+        background: rgba(255, 0, 0, 0.3);
+        transform: translateY(-2px);
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+}
+
+.max-retries-reached {
+    color: #999;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+// Dark theme
+[data-theme="dark"] .error-retry-container,
+.dark .error-retry-container {
+    background: rgba(255, 0, 0, 0.2);
+    border-color: rgba(255, 0, 0, 0.4);
+}
+
