@@ -1,5 +1,5 @@
 import React from 'react'
-import {BlockSelect, ThemeSelector} from '@stellar-expert/ui-framework'
+import {ThemeSelector} from '@stellar-expert/ui-framework'
 
 export default function Footer() {
     return <div className="footer">
@@ -26,9 +26,6 @@ export default function Footer() {
                 <a href="mailto:info@stellar.expert" target="_blank" rel="noreferrer noopener" className="nowrap">
                     <i className="icon icon-email"/>
                 </a>
-            </div>
-            <div className="dimmed condensed" style={{fontSize: '0.65em'}}>
-                Donations: <BlockSelect>GDQ75AS5VSH3ZHZI3P4TAVAOOSNHN346KXJOPZVQMMS27KNCC5TOQEXP</BlockSelect>
             </div>
         </div>
     </div>

@@ -165,16 +165,3 @@ pnpm build
 
 *(check for the generated files in the `./public` repository)*
 
-#### Re-generate Open API docs
-
-```
-pnpm build-api-docs 
-```
-
----
-
-### TBD
-
-- Provide access credentials for the test database
-- Review all existing tests and docs, move everything to this repository
-- Gradually transfer issues from the team bugtracker to project issue tracker# lumina
