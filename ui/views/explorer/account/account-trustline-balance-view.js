@@ -6,8 +6,20 @@ import {AssetLink, useOnScreen} from '@stellar-expert/ui-framework'
 export const AccountTrustlineBalanceView = React.memo(function AccountTrustlineBalanceView({trustline, currency, onClick}) {
     const root = useRef()
     const visible = useOnScreen(root)
-    if (!trustline || (!trustline.asset && !trustline.pool)) return null
-    const asset = AssetDescriptor.parse(trustline.asset || trustline.pool)
+    if (!trustline) return null
+    
+    // Handle both DB format (asset/pool) and Horizon format (asset_code/asset_issuer or asset_type)
+    let assetString = trustline.asset || trustline.pool
+    if (!assetString && trustline.asset_type) {
+        if (trustline.asset_type === 'native') {
+            assetString = 'XLM'
+        } else if (trustline.asset_code && trustline.asset_issuer) {
+            assetString = `${trustline.asset_code}-${trustline.asset_issuer}`
+        }
+    }
+    
+    if (!assetString) return null
+    const asset = AssetDescriptor.parse(assetString)
     if (!asset) return null
     const assetId = asset.toFQAN()
     const onBalanceClick = useCallback(() => {
@@ -22,7 +34,14 @@ export const AccountTrustlineBalanceView = React.memo(function AccountTrustlineB
 
 function Balance({trustline, currency}) {
     const estimatedValue = resolveBalanceValue(trustline, currency)
-    const asset = trustline.asset || trustline.pool
+    let asset = trustline.asset || trustline.pool
+    if (!asset && trustline.asset_type) {
+        if (trustline.asset_type === 'native') {
+            asset = 'XLM'
+        } else if (trustline.asset_code && trustline.asset_issuer) {
+            asset = `${trustline.asset_code}-${trustline.asset_issuer}`
+        }
+    }
     return <>
         <div className="condensed">
             <BalanceAmount trustline={trustline}/>

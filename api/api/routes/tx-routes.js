@@ -9,7 +9,35 @@ module.exports = function (app) {
     registerRoute(app,
         'tx',
         {cache: 'tx', billingCategory: 'txHistory'},
-        ({params, path, query}) => new TxQuery(params.network, path, query).toArray())
+        async ({params, path, query}) => {
+            const result = await new TxQuery(params.network, path, query).toArray()
+            // Fallback to Horizon if no local data and account filter is present
+            if (result._embedded?.records?.length === 0 && query.account) {
+                try {
+                    const account = Array.isArray(query.account) ? query.account[0] : query.account
+                    const limit = query.limit || 40
+                    const txs = await horizonAdapter.getAccountTransactions(params.network, account, limit)
+                    if (txs?.length > 0) {
+                        result._embedded.records = txs.map(tx => ({
+                            id: tx.id || tx.hash,
+                            hash: tx.hash,
+                            ledger: tx.ledger_attr || tx.ledger,
+                            ts: tx.created_at ? Math.floor(new Date(tx.created_at).getTime() / 1000) : undefined,
+                            successful: tx.successful,
+                            paging_token: tx.paging_token,
+                            body: tx.envelope_xdr,
+                            result: tx.result_xdr,
+                            meta: tx.result_meta_xdr,
+                            _fromHorizon: true
+                        }))
+                        result._meta = {fallback: 'horizon'}
+                    }
+                } catch (e) {
+                    // Ignore fallback errors
+                }
+            }
+            return result
+        })
 
     registerRoute(app,
         'tx/count',
