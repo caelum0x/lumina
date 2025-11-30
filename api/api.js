@@ -118,6 +118,7 @@
     // Soroban/Contract routes
     require('./api/routes/contract-explorer-routes')(app)
     require('./api/routes/contract-validation-routes')(app)
+    require('./api/routes/soroban-search-routes')(app)
     require('./api/routes/contract-data-explorer-routes')(app)
     require('./api/routes/soroban-stats-explorer-routes')(app)
     

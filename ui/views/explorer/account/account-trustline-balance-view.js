@@ -6,7 +6,9 @@ import {AssetLink, useOnScreen} from '@stellar-expert/ui-framework'
 export const AccountTrustlineBalanceView = React.memo(function AccountTrustlineBalanceView({trustline, currency, onClick}) {
     const root = useRef()
     const visible = useOnScreen(root)
+    if (!trustline || (!trustline.asset && !trustline.pool)) return null
     const asset = AssetDescriptor.parse(trustline.asset || trustline.pool)
+    if (!asset) return null
     const assetId = asset.toFQAN()
     const onBalanceClick = useCallback(() => {
         if (onClick) {

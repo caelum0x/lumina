@@ -27,7 +27,6 @@ import TxPreconditionsView from './tx-preconditions-view'
  */
 export default withErrorBoundary(function TxDetailsView({tx, embedded}) {
     let parsedTx
-    let parseError = false
     try {
         parsedTx = parseTxDetails({
             network: appSettings.networkPassphrase,
@@ -40,7 +39,6 @@ export default withErrorBoundary(function TxDetailsView({tx, embedded}) {
         })
     } catch (err) {
         console.warn('XDR parsing failed, using fallback:', err.message)
-        parseError = true
         parsedTx = {
             tx: {
                 hash: tx.id,
@@ -58,6 +56,10 @@ export default withErrorBoundary(function TxDetailsView({tx, embedded}) {
     }
     let feeSource
     let {tx: transaction} = parsedTx
+    // Ensure operations is always an array
+    if (!transaction.operations) {
+        transaction.operations = []
+    }
     if (transaction.innerTransaction) {
         feeSource = transaction.feeSource
         transaction = transaction.innerTransaction
@@ -195,19 +197,20 @@ export default withErrorBoundary(function TxDetailsView({tx, embedded}) {
                 </dl>}
             </div>
             {<TxPreconditionsView parsedTx={parsedTx}/>}
-            {!!embedded && !parseError && <div className="micro-space"><TxOperationsList parsedTx={parsedTx}/></div>}
+            {!!embedded && transaction.operations?.length > 0 && <div className="micro-space"><TxOperationsList parsedTx={parsedTx}/></div>}
         </div>
         {!embedded && <>
-            {parseError && <div className="segment blank space">
-                <div className="dimmed text-small">⚠️ Transaction details unavailable due to XDR parsing error. Basic info shown above.</div>
-            </div>}
-            {!parseError && <div className="segment blank space">
-                <TxOperationsList parsedTx={parsedTx}/>
+            <div className="segment blank space">
+                {transaction.operations?.length > 0 ? (
+                    <TxOperationsList parsedTx={parsedTx}/>
+                ) : (
+                    <div className="dimmed text-small">No operations found or unable to parse transaction details.</div>
+                )}
                 <TxOperationTree 
                     operations={transaction.operations || []} 
                     tx={tx}
                 />
-            </div>}
+            </div>
             {parsedTx.effects && parsedTx.effects.length > 0 && (
                 <div className="segment blank space">
                     <TxEffectsView effects={parsedTx.effects} tx={tx} />

@@ -22,27 +22,29 @@ Lumina 3D Modern Stellar Explorer API server started on 3000 port.
 [Ingestion] Starting for public...
 ✅ Continuous data ingestion ENABLED
 [Ingestion] Synced 200 recent ledgers
-[2025-11-30T00:45:08.498Z] GET /explorer/public/ledger/last
-[2025-11-30T00:45:08.503Z] GET /explorer/public/tx/stream
-[2025-11-30T00:45:08.508Z] GET /explorer/public/ledger/recent?limit=20
-[2025-11-30T00:45:08.510Z] GET /explorer/public/fee-analytics
-[2025-11-30T00:45:08.512Z] GET /explorer/public/transactions/latest?limit=20
-[2025-11-30T00:45:08.709Z] GET /explorer/public/ledger/stream
-[2025-11-30T00:45:09.107Z] GET /explorer/public/asset/meta?asset[]=XLM&origin=http%3A%2F%2Flocalhost%3A9001
-[2025-11-30T00:45:13.841Z] GET /explorer/public/ledger/60079001
-[2025-11-30T00:45:15.323Z] GET /explorer/public/ledger/stream
-[2025-11-30T00:45:17.797Z] GET /explorer/public/tx/3e3e7aa0bbb88b4e40154b760cb92c097597a9a291bf91345bbface5d2e9a1de
-Fetching transaction 3e3e7aa0bbb88b4e40154b760cb92c097597a9a291bf91345bbface5d2e9a1de from Horizon for network public
-Successfully fetched transaction 3e3e7aa0bbb88b4e40154b760cb92c097597a9a291bf91345bbface5d2e9a1de
-[2025-11-30T00:45:25.684Z] GET /explorer/public/ledger/last
-[2025-11-30T00:45:25.685Z] GET /explorer/public/tx/stream
-[2025-11-30T00:45:25.687Z] GET /explorer/public/transactions/latest?limit=20
-[2025-11-30T00:45:25.881Z] GET /explorer/public/ledger/stream
-[2025-11-30T00:45:28.873Z] GET /explorer/public/account/GDDVGADB6VBUOSYZ6K6XNGRGE4L7AQADL7DRXYQ7DRGIFC4O34TBHUEI
-[2025-11-30T00:45:29.369Z] GET /explorer/directory?address[]=GDDVGADB6VBUOSYZ6K6XNGRGE4L7AQADL7DRXYQ7DRGIFC4O34TBHUEI
-[2025-11-30T00:45:29.678Z] GET /explorer/public/account/GDDVGADB6VBUOSYZ6K6XNGRGE4L7AQADL7DRXYQ7DRGIFC4O34TBHUEI/claimable-balances?limit=10&order=desc
-[2025-11-30T00:45:29.681Z] GET /explorer/public/account/GDDVGADB6VBUOSYZ6K6XNGRGE4L7AQADL7DRXYQ7DRGIFC4O34TBHUEI/value
-[2025-11-30T00:45:29.682Z] GET /explorer/public/account/GDDVGADB6VBUOSYZ6K6XNGRGE4L7AQADL7DRXYQ7DRGIFC4O34TBHUEI/balance/XLM/history
-[2025-11-30T00:45:29.776Z] GET /explorer/public/tx?account[]=GDDVGADB6VBUOSYZ6K6XNGRGE4L7AQADL7DRXYQ7DRGIFC4O34TBHUEI&limit=40&order=desc
-[2025-11-30T00:45:29.866Z] GET /explorer/directory?address[]=GDDVGADB6VBUOSYZ6K6XNGRGE4L7AQADL7DRXYQ7DRGIFC4O34TBHUEI&address[]=GBJGQAC4PP3MFD3FOAODOZAWIRKZGZCHAU35EUPKJGJOLMNZM7HU4U5D&address[]=GAVH5ZWACAY2PHPUG4FL3LHHJIYIHOFPSIUGM2KHK25CJWXHAV6QKDMN
-[2025-11-30T00:45:30.179Z] GET /explorer/public/asset/meta?asset[]=USDx-GAVH5ZWACAY2PHPUG4FL3LHHJIYIHOFPSIUGM2KHK25CJWXHAV6QKDMN-1&origin=http%3A%2F%2Flocalhost%3A9001
+[2025-11-30T01:12:56.919Z] GET /explorer/public/ledger/last
+[2025-11-30T01:12:56.924Z] GET /explorer/public/tx/stream
+[2025-11-30T01:12:56.928Z] GET /explorer/public/transactions/latest?limit=20
+[2025-11-30T01:12:57.131Z] GET /explorer/public/ledger/stream
+[2025-11-30T01:12:58.528Z] GET /explorer/public/ledger/60079292
+[2025-11-30T01:12:59.530Z] GET /explorer/public/ledger/stream
+[2025-11-30T01:12:59.732Z] GET /explorer/public/tx/e577b5bf35fe387dabe9d1486ec6dcb9549c579f234832a4b6bd2abc6ce3f286
+Fetching transaction e577b5bf35fe387dabe9d1486ec6dcb9549c579f234832a4b6bd2abc6ce3f286 from Horizon for network public
+Successfully fetched transaction e577b5bf35fe387dabe9d1486ec6dcb9549c579f234832a4b6bd2abc6ce3f286
+[2025-11-30T01:13:48.515Z] GET /explorer/public/tx/e577b5bf35fe387dabe9d1486ec6dcb9549c579f234832a4b6bd2abc6ce3f286
+Fetching transaction e577b5bf35fe387dabe9d1486ec6dcb9549c579f234832a4b6bd2abc6ce3f286 from Horizon for network public
+Successfully fetched transaction e577b5bf35fe387dabe9d1486ec6dcb9549c579f234832a4b6bd2abc6ce3f286
+[2025-11-30T01:13:49.548Z] GET /explorer/directory?address[]=GC5NHVE42F225ZB7J4NF67O6RMM5LQ5IQKGMZZUSPI2PCBZCRE34RXSY
+[2025-11-30T01:13:49.569Z] GET /explorer/public/asset/meta?asset[]=XLM&origin=http%3A%2F%2Flocalhost%3A9001
+[2025-11-30T01:14:42.195Z] GET /explorer/public/ledger/last
+[2025-11-30T01:14:42.197Z] GET /explorer/public/tx/stream
+[2025-11-30T01:14:42.198Z] GET /explorer/public/ledger/recent?limit=20
+[2025-11-30T01:14:42.201Z] GET /explorer/public/fee-analytics
+[2025-11-30T01:14:42.204Z] GET /explorer/public/transactions/latest?limit=20
+[2025-11-30T01:14:42.403Z] GET /explorer/public/ledger/stream
+[2025-11-30T01:14:44.881Z] GET /explorer/public/account/GDJUTHWPISLP4U4BXYTR6DOGANKHCDITE7DFWFIHB3RRRMV42GADEXUI
+[2025-11-30T01:14:45.383Z] GET /explorer/directory?address[]=GDJUTHWPISLP4U4BXYTR6DOGANKHCDITE7DFWFIHB3RRRMV42GADEXUI
+[2025-11-30T01:14:45.403Z] GET /explorer/public/account/GDJUTHWPISLP4U4BXYTR6DOGANKHCDITE7DFWFIHB3RRRMV42GADEXUI/claimable-balances?limit=10&order=desc
+[2025-11-30T01:14:45.406Z] GET /explorer/public/account/GDJUTHWPISLP4U4BXYTR6DOGANKHCDITE7DFWFIHB3RRRMV42GADEXUI/value
+[2025-11-30T01:14:45.407Z] GET /explorer/public/account/GDJUTHWPISLP4U4BXYTR6DOGANKHCDITE7DFWFIHB3RRRMV42GADEXUI/balance/XLM/history
+[2025-11-30T01:14:45.507Z] GET /explorer/public/tx?account[]=GDJUTHWPISLP4U4BXYTR6DOGANKHCDITE7DFWFIHB3RRRMV42GADEXUI&limit=40&order=desc

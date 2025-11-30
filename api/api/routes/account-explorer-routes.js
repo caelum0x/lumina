@@ -75,9 +75,17 @@ module.exports = function (app) {
         {cache: 'balance'},
         async ({params, query, path}) => {
             try {
-                return await queryAccountClaimableBalances(params.network, params.account, path, query)
+                const result = await queryAccountClaimableBalances(params.network, params.account, path, query)
+                if (!result) {
+                    const queryString = new URLSearchParams(query).toString()
+                    const fullPath = queryString ? `${path}?${queryString}` : path
+                    return {_embedded: {records: []}, _links: {self: {href: fullPath}, prev: {href: fullPath}, next: {href: fullPath}}}
+                }
+                return result
             } catch (err) {
-                return {records: [], _meta: {fallback: true}}
+                const queryString = new URLSearchParams(query).toString()
+                const fullPath = queryString ? `${path}?${queryString}` : path
+                return {_embedded: {records: []}, _links: {self: {href: fullPath}, prev: {href: fullPath}, next: {href: fullPath}}, _meta: {error: err.message}}
             }
         })
 
