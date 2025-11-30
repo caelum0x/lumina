@@ -49,14 +49,26 @@ module.exports = function (app) {
     registerRoute(app,
         'account/:account/stats-history',
         {cache: 'stats'},
-        ({params, query}) => queryAccountStatsHistory(params.network, params.account, query))
+        async ({params, query}) => {
+            try {
+                return await queryAccountStatsHistory(params.network, params.account, query)
+            } catch (err) {
+                return []
+            }
+        })
 
     registerRoute(app,
         'account/:account/history/trades',
         {cache: 'tx'},
-        ({params, query, path}) => {
+        async ({params, query, path}) => {
             const {filter, network, account} = params
-            return queryAccountTrades(network, account, path, query)
+            try {
+                return await queryAccountTrades(network, account, path, query)
+            } catch (err) {
+                const queryString = new URLSearchParams(query).toString()
+                const fullPath = queryString ? `${path}?${queryString}` : path
+                return {_embedded: {records: []}, _links: {self: {href: fullPath}, prev: {href: fullPath}, next: {href: fullPath}}}
+            }
         })
 
     registerRoute(app,

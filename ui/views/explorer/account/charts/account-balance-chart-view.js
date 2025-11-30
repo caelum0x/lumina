@@ -66,7 +66,7 @@ export default Chart.withErrorBoundary(function AccountBalanceChartView({account
     if (!loaded)
         return <Chart.Loader container=""/>
     if (!balanceHistory?.length)
-        return <Chart.Loader unavailable container=""/>
+        return null
     const options = {
         tooltip: {
             pointFormatter

@@ -1438,3 +1438,13 @@ cached modules 12.8 MiB (javascript) 633 KiB (css/mini-extract) [cached] 1206 mo
 runtime modules 13.3 KiB 14 modules
 ./views/explorer/account/account-trustline-balance-view.js 3.56 KiB [built] [code generated]
 webpack 5.103.0 compiled successfully in 236 ms
+assets by status 6.28 MiB [cached] 63 assets
+assets by status 4.48 MiB [emitted]
+  asset app.162997351f208ec0444b.js 3.57 MiB [emitted] (name: app) 1 related asset
+  asset explorer.5b86e9dff1ebacfb1b3abf74e1c76dee.js 919 KiB [emitted] (name: explorer) 1 related asset
+  asset index.html 3.17 KiB [emitted]
+Entrypoint app 3.89 MiB (6.66 MiB) = app.1111d2a0900bee41abcb.css 319 KiB app.162997351f208ec0444b.js 3.57 MiB 2 auxiliary assets
+cached modules 12.8 MiB (javascript) 633 KiB (css/mini-extract) [cached] 1206 modules
+runtime modules 13.3 KiB 14 modules
+./views/explorer/account/charts/account-balance-chart-view.js 3.91 KiB [built] [code generated]
+webpack 5.103.0 compiled successfully in 389 ms
