@@ -63,11 +63,49 @@ module.exports = function (app) {
         async ({params, query, path}) => {
             const {filter, network, account} = params
             try {
-                return await queryAccountTrades(network, account, path, query)
+                const result = await queryAccountTrades(network, account, path, query)
+                return result
             } catch (err) {
-                const queryString = new URLSearchParams(query).toString()
-                const fullPath = queryString ? `${path}?${queryString}` : path
-                return {_embedded: {records: []}, _links: {self: {href: fullPath}, prev: {href: fullPath}, next: {href: fullPath}}}
+                // Fallback to Horizon when account not in DB
+                try {
+                    const limit = query.limit || 40
+                    const trades = await horizonAdapter.getAccountTrades(network, account, limit)
+                    const queryString = new URLSearchParams(query).toString()
+                    const fullPath = queryString ? `${path}?${queryString}` : path
+                    
+                    // Transform Horizon format to expected format
+                    const transformedTrades = (trades || []).map(t => {
+                        const baseAsset = t.base_asset_type === 'native' ? 'XLM' : 
+                            `${t.base_asset_code}-${t.base_asset_issuer}`
+                        const counterAsset = t.counter_asset_type === 'native' ? 'XLM' : 
+                            `${t.counter_asset_code}-${t.counter_asset_issuer}`
+                        
+                        return {
+                            paging_token: t.paging_token,
+                            ts: t.ledger_close_time ? Math.floor(new Date(t.ledger_close_time).getTime() / 1000) : undefined,
+                            offer: t.base_is_seller ? t.base_offer_id : t.counter_offer_id,
+                            seller: t.base_is_seller ? t.base_account : t.counter_account,
+                            buyer: t.base_is_seller ? t.counter_account : t.base_account,
+                            sold_asset: t.base_is_seller ? baseAsset : counterAsset,
+                            bought_asset: t.base_is_seller ? counterAsset : baseAsset,
+                            sold_amount: t.base_is_seller ? t.base_amount : t.counter_amount,
+                            bought_amount: t.base_is_seller ? t.counter_amount : t.base_amount,
+                            price: t.price,
+                            operation: t._links?.operation?.href,
+                            _fromHorizon: true
+                        }
+                    })
+                    
+                    return {
+                        _embedded: {records: transformedTrades},
+                        _links: {self: {href: fullPath}, prev: {href: fullPath}, next: {href: fullPath}},
+                        _meta: {fallback: 'horizon'}
+                    }
+                } catch (horizonErr) {
+                    const queryString = new URLSearchParams(query).toString()
+                    const fullPath = queryString ? `${path}?${queryString}` : path
+                    return {_embedded: {records: []}, _links: {self: {href: fullPath}, prev: {href: fullPath}, next: {href: fullPath}}}
+                }
             }
         })
 
