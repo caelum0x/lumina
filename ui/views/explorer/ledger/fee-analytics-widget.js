@@ -5,9 +5,9 @@ export default function FeeAnalyticsWidget() {
     const {loaded, data} = useExplorerApi('fee-analytics')
     
     if (!loaded) return <div className="loader"/>
-    if (!data) return null
+    if (!data?.current) return null
     
-    const {current, stats, recommendation} = data
+    const {current, stats = {}, recommendation} = data
     
     const getRecommendationColor = () => {
         switch (recommendation) {
@@ -32,52 +32,64 @@ export default function FeeAnalyticsWidget() {
             <h3>Network Fees</h3>
             <hr className="flare"/>
             
-            <div style={{
-                padding: '12px',
-                marginBottom: '16px',
-                borderRadius: '6px',
-                background: `${getRecommendationColor()}22`,
-                border: `1px solid ${getRecommendationColor()}`,
-                color: getRecommendationColor(),
-                fontWeight: '500'
-            }}>
-                {getRecommendationText()}
-            </div>
+            {recommendation && (
+                <div style={{
+                    padding: '12px',
+                    marginBottom: '16px',
+                    borderRadius: '6px',
+                    background: `${getRecommendationColor()}22`,
+                    border: `1px solid ${getRecommendationColor()}`,
+                    color: getRecommendationColor(),
+                    fontWeight: '500'
+                }}>
+                    {getRecommendationText()}
+                </div>
+            )}
             
             <dl>
                 <dt>Current Base Fee:</dt>
                 <dd>
                     <UpdateHighlighter>
-                        {current.base_fee_xlm} XLM
+                        {current.base_fee_xlm || '0.00001'} XLM
                     </UpdateHighlighter>
-                    <span className="dimmed text-small"> ({current.base_fee} stroops)</span>
+                    <span className="dimmed text-small"> ({current.base_fee || 100} stroops)</span>
                 </dd>
                 
                 <dt>Base Reserve:</dt>
                 <dd>
                     <UpdateHighlighter>
-                        {current.base_reserve_xlm} XLM
+                        {current.base_reserve_xlm || '0.5'} XLM
                     </UpdateHighlighter>
                 </dd>
                 
-                <dt>24h Average Fee:</dt>
-                <dd>
-                    <UpdateHighlighter>
-                        {stats.avg_fee_xlm} XLM
-                    </UpdateHighlighter>
-                </dd>
+                {stats.avg_fee_xlm && (
+                    <>
+                        <dt>24h Average Fee:</dt>
+                        <dd>
+                            <UpdateHighlighter>
+                                {stats.avg_fee_xlm} XLM
+                            </UpdateHighlighter>
+                        </dd>
+                    </>
+                )}
                 
-                <dt>24h Fee Range:</dt>
-                <dd>
-                    <span className="dimmed">
-                        {stats.min_fee_xlm} - {stats.max_fee_xlm} XLM
-                    </span>
-                </dd>
+                {stats.min_fee_xlm && stats.max_fee_xlm && (
+                    <>
+                        <dt>24h Fee Range:</dt>
+                        <dd>
+                            <span className="dimmed">
+                                {stats.min_fee_xlm} - {stats.max_fee_xlm} XLM
+                            </span>
+                        </dd>
+                    </>
+                )}
             </dl>
             
-            <div className="text-small dimmed" style={{marginTop: '12px'}}>
-                💡 Tip: Use {stats.median_fee_xlm} XLM for reliable transaction confirmation
-            </div>
+            {stats.median_fee_xlm && (
+                <div className="text-small dimmed" style={{marginTop: '12px'}}>
+                    💡 Tip: Use {stats.median_fee_xlm} XLM for reliable transaction confirmation
+                </div>
+            )}
         </div>
     )
 }

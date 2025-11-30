@@ -53,6 +53,15 @@
     app.use(bodyParser.json())
     app.use(bodyParser.urlencoded({extended: true}))
 
+    // CORS middleware
+    app.use((req, res, next) => {
+        res.header('Access-Control-Allow-Origin', '*')
+        res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
+        res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization')
+        if (req.method === 'OPTIONS') return res.sendStatus(200)
+        next()
+    })
+
     // Health check endpoint
     app.get('/', (req, res) => {
         res.json({
@@ -90,7 +99,42 @@
     require('./api/routes/stream-routes')(app)
     require('./api/routes/health-routes')(app)
     require('./api/routes/pools-live')(app)
-    require('./api/routes/unified-search')(app) // NEW: Unified search
+    require('./api/routes/unified-search')(app)
+    require('./api/routes/asset-details')(app)
+    require('./api/routes/latest-transactions')(app)
+    require('./api/routes/oauth-routes')(app)
+    require('./api/routes/domain-meta-routes')(app)
+    
+    // Explorer routes for core entities
+    require('./api/routes/account-explorer-routes')(app)
+    require('./api/routes/asset-explorer-routes')(app)
+    require('./api/routes/tx-routes')(app)
+    require('./api/routes/ledger-explorer-routes')(app)
+    require('./api/routes/market-explorer-routes')(app)
+    require('./api/routes/offer-explorer-routes')(app)
+    require('./api/routes/liquidity-pool-explorer-routes')(app)
+    require('./api/routes/claimable-balance-explorer-routes')(app)
+    
+    // Soroban/Contract routes
+    require('./api/routes/contract-explorer-routes')(app)
+    require('./api/routes/contract-validation-routes')(app)
+    require('./api/routes/contract-data-explorer-routes')(app)
+    require('./api/routes/soroban-stats-explorer-routes')(app)
+    
+    // Search routes
+    require('./api/routes/search-routes')(app)
+    
+    // Chart routes
+    require('./api/routes/chart-routes')(app)
+    
+    // Fee analytics
+    require('./api/routes/fee-analytics-routes')(app)
+    
+    // Address labels
+    require('./api/routes/address-labels-routes')(app)
+    
+    // Network stats
+    require('./api/routes/network-stats-routes')(app)
     
     // Mainnet liquidity pools router (alternative endpoint with TVL sorting)
     app.use('/explorer/public', require('./api/routes/liquidity-pools'))
@@ -104,19 +148,22 @@
     // Soroban stats endpoint (for UI)
     app.use('/explorer/public', require('./api/routes/soroban'))
     
-    // Horizon fallbacks (must be AFTER other routes to override)
-    require('./api/routes/horizon-fallback-routes')(app)
-    
+    // Whales, topology, AI
     app.use('/explorer/:network', require('./api/routes/whales'))
     app.use('/explorer/:network', require('./api/routes/topology'))
     app.use('/explorer/:network', require('./api/routes/ai-routes'))
-    require('./api/routes/chart-routes')(app)
+    
+    // Horizon routes
     require('./api/routes/account-horizon-routes')(app)
     require('./api/routes/asset-horizon-routes')(app)
     require('./api/routes/horizon-complete-routes')(app)
-    require('./api/routes/network-stats-routes')(app)
-    require('./api/routes/stellarexpert-proxy-routes')(app)
     require('./api/routes/horizon-direct-assets')(app)
+    
+    // Stellar Expert proxy
+    require('./api/routes/stellarexpert-proxy-routes')(app)
+    
+    // Horizon fallbacks (must be LAST to act as catch-all)
+    require('./api/routes/horizon-fallback-routes')(app)
     require('./api/routes/fee-analytics-routes')(app)
     require('./api/routes/address-labels-routes')(app)
 

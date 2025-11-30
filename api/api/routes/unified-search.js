@@ -1,11 +1,8 @@
 // api/routes/unified-search.js — GLOBAL SEARCH FOR EVERYTHING ON STELLAR
 const {registerRoute} = require('../router')
-const fetch = require('node-fetch')
 const horizonAdapter = require('../../connectors/horizon-adapter')
+const sorobanRpc = require('../../connectors/soroban-rpc')
 const {queryAssetStats} = require('../../business-logic/asset/asset-stats')
-const {queryAccountStats} = require('../../business-logic/account/account-stats')
-
-const EXPERT = 'https://api.stellar.expert/explorer/public'
 
 // Cache for 30 seconds
 const cache = new Map()
@@ -21,6 +18,16 @@ const getCached = (key, fn) => {
 // Format asset for UI
 const formatAsset = (s) => s === 'native' ? 'XLM' : s
 
+// Detect query type
+const detectType = (q) => {
+    if (q.length === 56 && q.startsWith('G')) return 'account'
+    if (q.length === 56 && q.startsWith('C')) return 'contract'
+    if (q.length === 64 && /^[0-9a-fA-F]+$/.test(q)) return 'transaction'
+    if (/^\d+$/.test(q) && q.length >= 7) return 'ledger'
+    if (q.length >= 2 && q.length <= 12) return 'asset'
+    return 'fuzzy'
+}
+
 module.exports = function (app) {
     registerRoute(app,
         'search/unified',
@@ -28,6 +35,7 @@ module.exports = function (app) {
         async ({params, query}) => {
             let q = (query.q || query.query || query.search || '').trim()
             const network = params.network || 'public'
+            const limit = parseInt(query.limit) || 15
             
             if (!q) {
                 return {
@@ -44,10 +52,11 @@ module.exports = function (app) {
 
             const results = []
             const lower = q.toLowerCase()
+            const type = detectType(q)
 
             try {
                 // 1. Account (56-char public key starting with G)
-                if (q.length === 56 && q.startsWith('G')) {
+                if (type === 'account') {
                     try {
                         const acc = await horizonAdapter.getAccount(network, q)
                         if (acc) {
@@ -55,19 +64,17 @@ module.exports = function (app) {
                             results.push({
                                 type: 'account',
                                 title: `Account ${q.slice(0, 8)}…${q.slice(-6)}`,
-                                subtitle: `${parseFloat(xlmBalance).toFixed(2)} XLM`,
+                                subtitle: `${parseFloat(xlmBalance).toFixed(2)} XLM • ${acc.balances.length} assets`,
                                 url: `/explorer/${network}/account/${q}`,
                                 icon: 'user',
                                 priority: 10
                             })
                         }
-                    } catch (e) {
-                        // Account not found
-                    }
+                    } catch (e) {}
                 }
 
                 // 2. Transaction hash (64 hex chars)
-                if (q.length === 64 && /^[0-9a-fA-F]+$/.test(q)) {
+                if (type === 'transaction') {
                     try {
                         const tx = await horizonAdapter.getTransaction(network, q)
                         if (tx) {
@@ -80,13 +87,11 @@ module.exports = function (app) {
                                 priority: 10
                             })
                         }
-                    } catch (e) {
-                        // Transaction not found
-                    }
+                    } catch (e) {}
                 }
 
                 // 3. Ledger (numeric, 7+ digits)
-                if (/^\d+$/.test(q) && q.length >= 7) {
+                if (type === 'ledger') {
                     try {
                         const ledger = await horizonAdapter.getLedger(network, parseInt(q))
                         if (ledger) {
@@ -99,48 +104,28 @@ module.exports = function (app) {
                                 priority: 9
                             })
                         }
-                    } catch (e) {
-                        // Ledger not found
-                    }
+                    } catch (e) {}
                 }
 
                 // 4. Assets - Try exact match first, then fuzzy
-                if (q.length >= 2 && q.length <= 12) {
+                if (type === 'asset' || type === 'fuzzy') {
                     try {
-                        // Try exact match
-                        const exactAsset = await queryAssetStats(network, q.toUpperCase())
-                        if (exactAsset) {
+                        const assets = await horizonAdapter.getAssets(network, 200)
+                        const matches = assets.filter(a =>
+                            a.asset_code.toLowerCase().includes(lower)
+                        ).slice(0, 5)
+
+                        matches.forEach(a => {
                             results.push({
                                 type: 'asset',
-                                title: exactAsset.asset || q.toUpperCase(),
-                                subtitle: `Supply: ${parseFloat(exactAsset.supply || 0).toLocaleString()}`,
-                                url: `/explorer/${network}/asset/${exactAsset.asset || q}`,
+                                title: a.asset_code,
+                                subtitle: `${parseInt(a.num_accounts || 0).toLocaleString()} holders • ${parseFloat(a.amount || 0).toFixed(0)} supply`,
+                                url: `/explorer/${network}/asset/${a.asset_code}-${a.asset_issuer}`,
                                 icon: 'coins',
-                                priority: 10
+                                priority: 8
                             })
-                        }
-                    } catch (e) {
-                        // Try fuzzy search
-                        try {
-                            const assets = await horizonAdapter.getAssets(network, 200)
-                            const matches = assets.filter(a =>
-                                a.asset_code.toLowerCase().includes(lower)
-                            ).slice(0, 5)
-
-                            matches.forEach(a => {
-                                results.push({
-                                    type: 'asset',
-                                    title: a.asset_code,
-                                    subtitle: `${parseInt(a.num_accounts || 0).toLocaleString()} holders`,
-                                    url: `/explorer/${network}/asset/${a.asset_code}-${a.asset_issuer}`,
-                                    icon: 'coins',
-                                    priority: 8
-                                })
-                            })
-                        } catch (err) {
-                            console.error('Fuzzy asset search failed:', err.message)
-                        }
-                    }
+                        })
+                    } catch (err) {}
                 }
 
                 // 5. Liquidity Pools
@@ -161,24 +146,183 @@ module.exports = function (app) {
                                 })
                             }
                         })
-                    } catch (e) {
-                        // Pools not available
-                    }
+                    } catch (e) {}
                 }
 
                 // 6. Soroban Contracts (56-char starting with C)
-                if (q.length === 56 && q.startsWith('C')) {
-                    results.push({
-                        type: 'contract',
-                        title: `Soroban Contract ${q.slice(0, 8)}…`,
-                        subtitle: 'Smart contract on Stellar',
-                        url: `/explorer/${network}/contract/${q}`,
-                        icon: 'cogs',
-                        priority: 10
-                    })
+                if (type === 'contract') {
+                    try {
+                        // Get contract info from RPC
+                        const contract = await sorobanRpc.getContract(network, q)
+                        results.push({
+                            type: 'contract',
+                            title: `Contract ${q.slice(0, 8)}…${q.slice(-6)}`,
+                            subtitle: contract.executable?.wasm_hash ? `WASM: ${contract.executable.wasm_hash.slice(0, 8)}…` : 'Smart contract',
+                            url: `/explorer/${network}/contract/${q}`,
+                            icon: 'cogs',
+                            priority: 10
+                        })
+
+                        // Get recent events for this contract
+                        try {
+                            const latestLedger = await sorobanRpc.getLatestLedger(network)
+                            const startLedger = Math.max(1, latestLedger.sequence - 1000)
+                            const events = await sorobanRpc.getEvents(network, startLedger, [{
+                                type: 'contract',
+                                contractIds: [q]
+                            }], 5)
+                            
+                            if (events.events && events.events.length > 0) {
+                                results.push({
+                                    type: 'contract_events',
+                                    title: `${events.events.length} Recent Events`,
+                                    subtitle: `Last event at ledger ${events.events[0].ledger}`,
+                                    url: `/explorer/${network}/contract/${q}#events`,
+                                    icon: 'bolt',
+                                    priority: 8
+                                })
+                            }
+                        } catch (e) {}
+                    } catch (e) {
+                        // Contract not found or RPC error
+                        results.push({
+                            type: 'contract',
+                            title: `Contract ${q.slice(0, 8)}…`,
+                            subtitle: 'Smart contract on Stellar',
+                            url: `/explorer/${network}/contract/${q}`,
+                            icon: 'cogs',
+                            priority: 10
+                        })
+                    }
                 }
 
-                // 7. AI Suggestions (natural language)
+                // 7. Soroban Deployments & Invocations (keyword search)
+                if (/soroban|contract|deploy|invoke|wasm/i.test(q)) {
+                    try {
+                        // Get recent contract deployments
+                        if (/deploy|contract/i.test(q)) {
+                            const deployOps = await horizonAdapter.getOperations(network, 10, null, null)
+                            const deployments = deployOps.filter(op => op.type === 'invoke_host_function' && 
+                                (op.function === 'HostFunctionTypeHostFunctionTypeCreateContract' || 
+                                 op.function === 'create_contract'))
+                            
+                            deployments.slice(0, 3).forEach(op => {
+                                results.push({
+                                    type: 'deployment',
+                                    title: `Contract Deployment`,
+                                    subtitle: `Ledger ${op.transaction?.ledger || 'N/A'} • ${new Date(op.created_at).toLocaleDateString()}`,
+                                    url: `/explorer/${network}/operation/${op.id}`,
+                                    icon: 'upload',
+                                    priority: 7
+                                })
+                            })
+                        }
+
+                        // Get recent invocations
+                        if (/invoke|call/i.test(q)) {
+                            const invokeOps = await horizonAdapter.getOperations(network, 10, null, null)
+                            const invocations = invokeOps.filter(op => op.type === 'invoke_host_function')
+                            
+                            invocations.slice(0, 3).forEach(op => {
+                                results.push({
+                                    type: 'invocation',
+                                    title: `Contract Invocation`,
+                                    subtitle: `${new Date(op.created_at).toLocaleDateString()}`,
+                                    url: `/explorer/${network}/operation/${op.id}`,
+                                    icon: 'play',
+                                    priority: 6
+                                })
+                            })
+                        }
+                    } catch (e) {}
+                }
+
+                // 8. Operations (if searching by type)
+                if (/operation|payment|create_account|invoke/i.test(q)) {
+                    try {
+                        const ops = await horizonAdapter.getOperations(network, 5)
+                        ops.slice(0, 3).forEach(op => {
+                            results.push({
+                                type: 'operation',
+                                title: `${op.type.replace(/_/g, ' ')}`,
+                                subtitle: `${new Date(op.created_at).toLocaleString()}`,
+                                url: `/explorer/${network}/operation/${op.id}`,
+                                icon: 'cog',
+                                priority: 6
+                            })
+                        })
+                    } catch (e) {}
+                }
+
+                // 8. Offers (if searching by offer ID or "offer")
+                if (/offer/i.test(q) || (/^\d+$/.test(q) && q.length < 7)) {
+                    try {
+                        const offers = await horizonAdapter.getOffers(network, {limit: 5})
+                        offers.slice(0, 3).forEach(offer => {
+                            results.push({
+                                type: 'offer',
+                                title: `Offer #${offer.id}`,
+                                subtitle: `${offer.selling.asset_code || 'XLM'} → ${offer.buying.asset_code || 'XLM'}`,
+                                url: `/explorer/${network}/offer/${offer.id}`,
+                                icon: 'handshake',
+                                priority: 6
+                            })
+                        })
+                    } catch (e) {}
+                }
+
+                // 9. Payments (if account-related search)
+                if (type === 'account' && results.length > 0) {
+                    try {
+                        const payments = await horizonAdapter.getAccountPayments(network, q, 3)
+                        payments.forEach(p => {
+                            results.push({
+                                type: 'payment',
+                                title: `Payment ${parseFloat(p.amount || 0).toFixed(2)} ${p.asset_code || 'XLM'}`,
+                                subtitle: `${new Date(p.created_at).toLocaleDateString()}`,
+                                url: `/explorer/${network}/tx/${p.transaction_hash}`,
+                                icon: 'money-bill',
+                                priority: 5
+                            })
+                        })
+                    } catch (e) {}
+                }
+
+                // 10. Effects (if account-related search)
+                if (type === 'account' && results.length > 0) {
+                    try {
+                        const effects = await horizonAdapter.getAccountEffects(network, q, 3)
+                        effects.forEach(e => {
+                            results.push({
+                                type: 'effect',
+                                title: e.type.replace(/_/g, ' '),
+                                subtitle: `${new Date(e.created_at).toLocaleDateString()}`,
+                                url: `/explorer/${network}/tx/${e.transaction_hash || e.id}`,
+                                icon: 'bolt',
+                                priority: 4
+                            })
+                        })
+                    } catch (err) {}
+                }
+
+                // 11. Claimable Balances
+                if (/claimable|balance/i.test(q) || (q.length === 56 && !q.startsWith('G') && !q.startsWith('C'))) {
+                    try {
+                        const balances = await horizonAdapter.getClaimableBalances(network, {limit: 3})
+                        balances.forEach(b => {
+                            results.push({
+                                type: 'claimable_balance',
+                                title: `Claimable ${b.amount} ${b.asset.split(':')[0] || 'XLM'}`,
+                                subtitle: `${b.claimants.length} claimants`,
+                                url: `/explorer/${network}/claimable-balance/${b.id}`,
+                                icon: 'gift',
+                                priority: 6
+                            })
+                        })
+                    } catch (e) {}
+                }
+
+                // 12. AI Suggestions (natural language)
                 const aiSuggestions = []
                 if (/whale|rich|big|large/i.test(q)) {
                     aiSuggestions.push({
@@ -219,12 +363,40 @@ module.exports = function (app) {
                         icon: 'cogs',
                         priority: 5
                     })
+                    aiSuggestions.push({
+                        type: 'suggestion',
+                        title: 'Recent Contract Deployments',
+                        subtitle: 'Latest smart contracts on Stellar',
+                        url: `/explorer/${network}/operations?type=invoke_host_function`,
+                        icon: 'upload',
+                        priority: 5
+                    })
+                }
+                if (/event|emit/i.test(q) && type === 'contract') {
+                    aiSuggestions.push({
+                        type: 'suggestion',
+                        title: 'Contract Events',
+                        subtitle: 'View emitted events for this contract',
+                        url: `/explorer/${network}/contract/${q}#events`,
+                        icon: 'bolt',
+                        priority: 5
+                    })
+                }
+                if (/state|storage|data/i.test(q) && type === 'contract') {
+                    aiSuggestions.push({
+                        type: 'suggestion',
+                        title: 'Contract State',
+                        subtitle: 'View persistent storage data',
+                        url: `/explorer/${network}/contract/${q}#state`,
+                        icon: 'database',
+                        priority: 5
+                    })
                 }
 
                 // Combine and sort by priority
                 const allResults = [...results, ...aiSuggestions]
                     .sort((a, b) => b.priority - a.priority)
-                    .slice(0, 15)
+                    .slice(0, limit)
 
                 return {
                     records: allResults,
@@ -237,7 +409,8 @@ module.exports = function (app) {
                     _meta: {
                         query: q,
                         count: allResults.length,
-                        network: network
+                        network: network,
+                        type: type
                     }
                 }
 

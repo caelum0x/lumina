@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import {useParams} from 'react-router'
 import PropTypes from 'prop-types'
-import {BlockSelect, loadTransaction, usePageMetadata} from '@stellar-expert/ui-framework'
+import {BlockSelect, usePageMetadata} from '@stellar-expert/ui-framework'
+import {apiCall} from '../../../models/api'
 import ErrorNotificationBlock from '../../components/error-notification-block'
 import {ShareButton} from '../../components/share-button'
 import {DataRefreshIndicator} from '../../components/data-refresh-indicator'
@@ -15,19 +16,41 @@ export default function TxView({id}) {
     const [lastUpdated, setLastUpdated] = useState(null)
 
     const loadTx = async () => {
+        // Validate transaction hash format
+        if (txId && txId.length < 8) {
+            setTxData({error: 'invalid', txId, message: 'Transaction hash is too short. A Stellar transaction hash should be 64 characters.'})
+            return
+        }
+        
         try {
-            const data = await loadTransaction(txId)
-                .catch(err => {
-                    if (err && (err.name === 'NotFoundError' || err.status === 404))
-                        return {error: 'not found', txId}
-                    return Promise.reject(err)
-                })
-            setTxData(data)
+            const data = await apiCall(`tx/${txId}`)
+            if (!data || data.error || !data.envelope_xdr || !data.result_xdr) {
+                if (txId && txId.length < 64) {
+                    setTxData({error: 'invalid', txId, message: `Transaction hash appears incomplete (${txId.length} characters, expected 64). Please check the URL.`})
+                } else {
+                    setTxData({error: 'not found', txId})
+                }
+            } else {
+                const transformed = {
+                    ...data,
+                    id: data.hash || data.id,
+                    body: data.envelope_xdr,
+                    result: data.result_xdr,
+                    meta: data.result_meta_xdr || data.fee_meta_xdr,
+                    ts: Math.floor(new Date(data.created_at).getTime() / 1000),
+                    protocol: data.ledger_attr || 20,
+                    ledger: data.ledger,
+                    source: data.source_account,
+                    fee: data.fee_charged || data.max_fee,
+                    operations: data.operation_count
+                }
+                setTxData(transformed)
+            }
             setLastUpdated(new Date().toISOString())
             return data
         } catch (err) {
             console.error('Failed to load transaction:', err)
-            throw err
+            setTxData({error: 'not found', txId})
         }
     }
 
@@ -40,12 +63,12 @@ export default function TxView({id}) {
     })
     if (!txData)
         return <div className="loader"/>
-    const txHash = txData.id
+    const txHash = txData.id || txData.txId || txId
     if (txData.error) return <>
         <h2 className="word-break relative">Transaction&nbsp;<BlockSelect>{txHash}</BlockSelect></h2>
         <ErrorNotificationBlock>
             {txData.error === 'invalid' ?
-                'Invalid transaction hash. Make sure that you copied it correctly.' :
+                (txData.message || 'Invalid transaction hash. Make sure that you copied it correctly.') :
                 'Transaction not found on Stellar Network.'
             }
         </ErrorNotificationBlock>

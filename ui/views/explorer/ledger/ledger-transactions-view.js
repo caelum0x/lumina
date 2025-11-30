@@ -1,12 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {useDependantState, loadLedgerTransactions} from '@stellar-expert/ui-framework'
+import {useDependantState} from '@stellar-expert/ui-framework'
+import {apiCall} from '../../../models/api'
 import TxDetails from '../tx/tx-details-view'
 
 export default function LedgerTransactionsView({ledgerSequence}) {
     const [transactions, setTransactions] = useDependantState(() => {
-        loadLedgerTransactions(ledgerSequence)
-            .then(res => setTransactions(res))
+        apiCall(`ledger/${ledgerSequence}/tx`)
+            .then(res => {
+                const txs = (res._embedded?.records || res.records || res || []).map(tx => ({
+                    ...tx,
+                    id: tx.hash || tx.id,
+                    body: tx.envelope_xdr,
+                    result: tx.result_xdr,
+                    meta: tx.result_meta_xdr || tx.fee_meta_xdr,
+                    ts: Math.floor(new Date(tx.created_at).getTime() / 1000),
+                    protocol: tx.ledger_attr || 20
+                }))
+                setTransactions(txs)
+            })
         return null
     }, [ledgerSequence])
 

@@ -6,6 +6,7 @@ const {queryAccountBalanceHistory} = require('../../business-logic/account/accou
 const {queryAccountTrades} = require('../../business-logic/dex/trades')
 const {queryAccountClaimableBalances} = require('../../business-logic/claimable-balances/claimable-balances')
 const {estimateAccountValue} = require('../../business-logic/account/account-value-estimator')
+const horizonAdapter = require('../../connectors/horizon-adapter')
 
 module.exports = function (app) {
     registerRoute(app,
@@ -16,7 +17,34 @@ module.exports = function (app) {
     registerRoute(app,
         'account/:account',
         {cache: 'stats'},
-        ({params, query}) => queryAccountStats(params.network, params.account, query))
+        async ({params, query}) => {
+            try {
+                return await queryAccountStats(params.network, params.account, query)
+            } catch (err) {
+                if (err.status === 404 || err.message?.includes('not found')) {
+                    try {
+                        const horizonAccount = await horizonAdapter.getAccount(params.network, params.account)
+                        return {
+                            account: horizonAccount.account_id,
+                            created: horizonAccount.created_at,
+                            deleted: false,
+                            payments: 0,
+                            trades: 0,
+                            activity: {yearly: 'none', monthly: 'none'},
+                            assets: [],
+                            balances: horizonAccount.balances || [],
+                            signers: horizonAccount.signers || [],
+                            thresholds: horizonAccount.thresholds || {low_threshold: 0, med_threshold: 0, high_threshold: 0},
+                            flags: horizonAccount.flags || {},
+                            _fromHorizon: true
+                        }
+                    } catch (horizonErr) {
+                        throw err
+                    }
+                }
+                throw err
+            }
+        })
 
     registerRoute(app,
         'account/:account/stats-history',
@@ -34,19 +62,34 @@ module.exports = function (app) {
     registerRoute(app,
         'account/:account/balance/:asset/history',
         {cache: 'balance'},
-        ({params}) => queryAccountBalanceHistory(params.network, params.account, params.asset))
+        async ({params}) => {
+            try {
+                return await queryAccountBalanceHistory(params.network, params.account, params.asset)
+            } catch (err) {
+                return {records: [], _meta: {fallback: true}}
+            }
+        })
 
     registerRoute(app,
         'account/:account/claimable-balances',
         {cache: 'balance'},
-        ({params, query, path}) => {
-            const {network, account} = params
-            return queryAccountClaimableBalances(network, account, path, query)
+        async ({params, query, path}) => {
+            try {
+                return await queryAccountClaimableBalances(params.network, params.account, path, query)
+            } catch (err) {
+                return {records: [], _meta: {fallback: true}}
+            }
         })
 
     registerRoute(app,
         'account/:account/value',
         {cache: 'stats'},
-        ({params, query}) => estimateAccountValue(params.network, params.account, query.currency, query.ts))
+        async ({params, query}) => {
+            try {
+                return await estimateAccountValue(params.network, params.account, query.currency, query.ts)
+            } catch (err) {
+                return {value: 0, _meta: {fallback: true}}
+            }
+        })
 
 }

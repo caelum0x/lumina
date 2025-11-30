@@ -32,7 +32,41 @@ async function getTransactions(network, limit = 50, cursor) {
 
 async function getTransaction(network, hash) {
     const server = getServer(network)
-    return await server.transactions().transaction(hash).call()
+    try {
+        const tx = await server.transactions().transaction(hash).call()
+        return tx
+    } catch (err) {
+        // Log the full error for debugging
+        console.error(`Horizon getTransaction error for ${hash}:`, {
+            message: err.message,
+            status: err.status,
+            response: err.response?.status,
+            statusText: err.response?.statusText,
+            data: err.response?.data,
+            stack: err.stack
+        })
+        
+        // Provide more detailed error information
+        // Stellar SDK errors can have different structures
+        const status = err.response?.status || err.status || 
+                      (err.message?.includes('404') || err.message?.includes('Not Found') ? 404 : 
+                       (err.message?.includes('400') || err.message?.includes('Bad Request') ? 400 : 500))
+        
+        if (status === 404) {
+            const error = new Error(`Transaction ${hash} not found on the ${network} ledger`)
+            error.status = 404
+            error.hash = hash
+            error.hashLength = hash ? hash.length : 0
+            error.originalError = err.message
+            throw error
+        }
+        
+        // Re-throw with status if available
+        if (status !== 500) {
+            err.status = status
+        }
+        throw err
+    }
 }
 
 async function getAccount(network, address) {

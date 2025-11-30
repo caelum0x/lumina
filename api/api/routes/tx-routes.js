@@ -1,29 +1,11 @@
 const {registerRoute} = require('../router')
 const apiCache = require('../api-cache')
 const TxQuery = require('../../business-logic/archive/tx-query')
-const {subscribeToTransactions} = require('../../business-logic/archive/tx-stream')
 const horizonAdapter = require('../../connectors/horizon-adapter')
-const corsMatcher = require('../cors-matcher')
 
 apiCache.createBucket('tx', 4000, '10 seconds')
 
 module.exports = function (app) {
-    // Recent transactions from Horizon
-    registerRoute(app,
-        'tx/recent',
-        {cache: 'stats', cors: 'open'},
-        async ({params, query = {}}) => {
-            const txs = await horizonAdapter.getTransactions(params.network, query.limit || 50, query.cursor)
-            const formatted = txs.map(tx => ({
-                hash: tx.hash,
-                source: tx.source_account,
-                ts: new Date(tx.created_at).getTime(),
-                operations: tx.operation_count || 0,
-                successful: tx.successful
-            }))
-            return {_embedded: {records: formatted}}
-        })
-
     registerRoute(app,
         'tx',
         {cache: 'tx', billingCategory: 'txHistory'},
@@ -39,141 +21,105 @@ module.exports = function (app) {
             }
         })
 
-    //transaction by id or hash
-    registerRoute(app,
-        'tx/:id',
-        {cache: 'tx'},
-        ({params}) => TxQuery.fetchTx(params.network, params.id))
-
     //transactions for a given ledger sequence
     registerRoute(app,
         'ledger/:sequence/tx',
         {cache: 'tx'},
         ({params}) => TxQuery.fetchLedgerTransactions(params.network, params.sequence))
 
-    // Server-Sent Events stream for real-time transactions
-    app.get('/explorer/:network/tx/stream', function (req, res) {
-        const {network} = req.params
-        const {limit = 200, includeEffects = 'false', minAmount} = req.query
+    // Transaction stream endpoint (SSE) - must be before /tx/:id route
+    app.get('/explorer/:network/tx/stream', async (req, res) => {
+        const network = req.params.network || 'public'
+        res.writeHead(200, {
+            'Content-Type': 'text/event-stream',
+            'Cache-Control': 'no-cache',
+            'Connection': 'keep-alive',
+            'Access-Control-Allow-Origin': '*'
+        })
 
-        // Set SSE headers
-        res.setHeader('Content-Type', 'text/event-stream')
-        res.setHeader('Cache-Control', 'no-cache')
-        res.setHeader('Connection', 'keep-alive')
-        res.setHeader('X-Accel-Buffering', 'no') // Disable nginx buffering
+        let lastCursor = 'now'
+        let isActive = true
 
-        // CORS headers
-        const origin = req.header('Origin')
-        if (origin && (corsMatcher.match(origin) || req.billingProcessed)) {
-            res.setHeader('Access-Control-Allow-Origin', origin)
-            res.setHeader('Access-Control-Allow-Credentials', 'true')
-        } else {
-            res.setHeader('Access-Control-Allow-Origin', '*')
+        const poll = async () => {
+            if (!isActive) return
+            try {
+                const txs = await horizonAdapter.getTransactions(network, 5, lastCursor)
+                if (txs?.length > 0) {
+                    txs.forEach(tx => {
+                        res.write(`data: ${JSON.stringify({
+                            hash: tx.hash || tx.id,
+                            time: tx.created_at,
+                            ops: tx.operation_count,
+                            source: tx.source_account ? tx.source_account.slice(0, 8) + '...' : 'unknown',
+                            successful: tx.successful
+                        })}\n\n`)
+                    })
+                    lastCursor = txs[txs.length - 1].paging_token
+                }
+            } catch (e) {
+                console.error('Transaction stream error:', e.message)
+            }
         }
 
-        // Send initial connection message
-        res.write('data: {"type":"connected","network":"' + network + '"}\n\n')
-
-        // Subscribe to transaction stream
-        const unsubscribe = subscribeToTransactions(network, (transactions) => {
-            try {
-                // Handle both single transaction and array of transactions
-                const txArray = Array.isArray(transactions) ? transactions : [transactions]
-                
-                // Filter transactions if needed
-                let filtered = txArray
-                if (minAmount) {
-                    const min = parseFloat(minAmount)
-                    filtered = txArray.filter(tx => {
-                        const amount = parseFloat(tx.amount || tx.total_coins || 0)
-                        return amount >= min
-                    })
-                }
-
-                // Limit the number of transactions sent
-                if (filtered.length > limit) {
-                    filtered = filtered.slice(-limit)
-                }
-
-                // Send each transaction as SSE event
-                for (const tx of filtered) {
-                    if (!tx) continue // Skip null/undefined transactions
-                    try {
-                        const data = JSON.stringify(tx)
-                        res.write(`data: ${data}\n\n`)
-                    } catch (error) {
-                        console.error('Error serializing transaction for SSE:', error, tx)
-                    }
-                }
-            } catch (error) {
-                console.error('Error processing transaction stream:', error)
-                // Send error to client
-                try {
-                    res.write(`event: error\ndata: ${JSON.stringify({error: 'Failed to process transaction'})}\n\n`)
-                } catch (e) {
-                    // Connection may be closed
-                }
-            }
-        })
-
-        // Handle client disconnect
+        poll()
+        const interval = setInterval(poll, 2000)
         req.on('close', () => {
-            try {
-                unsubscribe()
-            } catch (error) {
-                console.error('Error unsubscribing from transaction stream:', error)
-            }
-            try {
-                res.end()
-            } catch (error) {
-                // Connection already closed
-            }
+            isActive = false
+            clearInterval(interval)
+            res.end()
         })
+    })
 
-        // Keep connection alive with heartbeat
-        const heartbeat = setInterval(() => {
-            try {
-                res.write(': heartbeat\n\n')
-            } catch (error) {
-                clearInterval(heartbeat)
-                try {
-                    unsubscribe()
-                } catch (e) {
-                    console.error('Error unsubscribing on heartbeat failure:', e)
-                }
-                try {
-                    res.end()
-                } catch (e) {
-                    // Connection already closed
-                }
-            }
-        }, 30000) // Send heartbeat every 30 seconds
-
-        // Clean up on error
-        req.on('error', (error) => {
-            console.error('SSE request error:', error)
-            clearInterval(heartbeat)
-            try {
-                unsubscribe()
-            } catch (e) {
-                console.error('Error unsubscribing on request error:', e)
-            }
-            try {
-                res.end()
-            } catch (e) {
-                // Connection already closed
-            }
-        })
-
-        // Handle response errors
-        res.on('error', (error) => {
-            console.error('SSE response error:', error)
-            clearInterval(heartbeat)
-            try {
-                unsubscribe()
-            } catch (e) {
-                console.error('Error unsubscribing on response error:', e)
-            }
-        })
+    //transaction by id or hash - MUST be last to not conflict with other routes
+    app.get('/explorer/:network/tx/:id', async (req, res) => {
+        const {network, id} = req.params
+        
+        // Reject reserved keywords
+        if (id === 'stream' || id === 'recent' || id === 'count') {
+            return res.status(404).json({
+                error: 'Not Found',
+                message: `Invalid transaction ID: ${id}`,
+                status: 404
+            })
+        }
+        
+        // Validate transaction hash format
+        if (!id || id.length < 8) {
+            return res.status(400).json({
+                error: 'Bad Request',
+                message: 'Invalid transaction hash. Transaction hash must be at least 8 characters.',
+                status: 400
+            })
+        }
+        
+        try {
+            console.log(`Fetching transaction ${id} from Horizon for network ${network}`)
+            const tx = await horizonAdapter.getTransaction(network, id)
+            console.log(`Successfully fetched transaction ${id}`)
+            res.json(tx)
+        } catch (err) {
+            console.error(`Transaction ${id} fetch failed:`, {
+                message: err.message,
+                status: err.status,
+                stack: err.stack,
+                originalError: err.originalError,
+                hash: err.hash,
+                hashLength: err.hashLength
+            })
+            
+            // Provide more helpful error message
+            const errorMessage = id.length < 64 
+                ? `Transaction hash appears incomplete. Expected 64 characters, got ${id.length}.`
+                : `Transaction ${id} not found on the ${network} ledger. ${err.originalError ? 'Error: ' + err.originalError : ''}`
+            
+            res.status(err.status || 404).json({
+                error: 'Not Found',
+                message: errorMessage,
+                status: err.status || 404,
+                receivedHash: id,
+                hashLength: id.length,
+                details: err.originalError || err.message
+            })
+        }
     })
 }

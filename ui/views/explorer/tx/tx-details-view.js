@@ -26,15 +26,36 @@ import TxPreconditionsView from './tx-preconditions-view'
  * @return {JSX.Element}
  */
 export default withErrorBoundary(function TxDetailsView({tx, embedded}) {
-    const parsedTx = parseTxDetails({
-        network: appSettings.networkPassphrase,
-        txEnvelope: tx.body,
-        result: tx.result,
-        meta: tx.meta,
-        createdAt: tx.ts,
-        context: {},
-        protocol: tx.protocol
-    })
+    let parsedTx
+    let parseError = false
+    try {
+        parsedTx = parseTxDetails({
+            network: appSettings.networkPassphrase,
+            txEnvelope: tx.body,
+            result: tx.result,
+            meta: tx.meta,
+            createdAt: tx.ts,
+            context: {},
+            protocol: tx.protocol
+        })
+    } catch (err) {
+        console.warn('XDR parsing failed, using fallback:', err.message)
+        parseError = true
+        parsedTx = {
+            tx: {
+                hash: tx.id,
+                source: tx.source,
+                fee: tx.fee,
+                operations: [],
+                memo: null,
+                timeBounds: null,
+                innerTransaction: null,
+                signatures: []
+            },
+            effects: [],
+            feeEffect: {bid: tx.fee || 0, charged: tx.fee || 0}
+        }
+    }
     let feeSource
     let {tx: transaction} = parsedTx
     if (transaction.innerTransaction) {
@@ -45,7 +66,7 @@ export default withErrorBoundary(function TxDetailsView({tx, embedded}) {
     }
     const source = transaction.source
     const memo = transaction.memo
-    const feeEffect = parsedTx.effects.find(e => e.type === 'feeCharged')
+    const feeEffect = parsedTx.feeEffect || parsedTx.effects.find(e => e.type === 'feeCharged') || {bid: tx.fee || 0, charged: tx.fee || 0, source: tx.source}
     let contractFee
     const size = Buffer.from(tx.body, 'base64').length
     const [firstOp] = transaction.operations
@@ -174,16 +195,19 @@ export default withErrorBoundary(function TxDetailsView({tx, embedded}) {
                 </dl>}
             </div>
             {<TxPreconditionsView parsedTx={parsedTx}/>}
-            {!!embedded && <div className="micro-space"><TxOperationsList parsedTx={parsedTx}/></div>}
+            {!!embedded && !parseError && <div className="micro-space"><TxOperationsList parsedTx={parsedTx}/></div>}
         </div>
         {!embedded && <>
-            <div className="segment blank space">
+            {parseError && <div className="segment blank space">
+                <div className="dimmed text-small">⚠️ Transaction details unavailable due to XDR parsing error. Basic info shown above.</div>
+            </div>}
+            {!parseError && <div className="segment blank space">
                 <TxOperationsList parsedTx={parsedTx}/>
                 <TxOperationTree 
                     operations={transaction.operations || []} 
                     tx={tx}
                 />
-            </div>
+            </div>}
             {parsedTx.effects && parsedTx.effects.length > 0 && (
                 <div className="segment blank space">
                     <TxEffectsView effects={parsedTx.effects} tx={tx} />

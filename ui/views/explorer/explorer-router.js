@@ -5,6 +5,7 @@ import NotFoundView from '../pages/not-found-page-view'
 import ExplorerHomePageView from './pages/explorer-home-page-view'
 import AssetsDashboard from './asset/assets-dashboard-view'
 import Asset from './asset/asset-view'
+import AssetDetailsPage from './asset-details-page'
 import Account from './account/account-view'
 import Contract from './contract/contract-view'
 import ContractValidationInfo from './contract/contract-validation-view'
@@ -31,6 +32,7 @@ export default function ExplorerRouter({match}) {
     const {path} = match
     return <div className="container">
         <Switch>
+            <Route path={`${path}/asset/:asset/details`} component={AssetDetailsPage}/>
             <Route path={`${path}/asset/:asset`} component={Asset}/>
             <Route path={`${path}/asset`} component={AssetsDashboard}/>
             <Route path={`${path}/ledger/:sequence`} component={Ledger}/>
